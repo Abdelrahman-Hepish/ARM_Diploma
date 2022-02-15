@@ -1,6 +1,6 @@
 /*************************************************************************/
 /* Author        : Abdelrahman Hepish                                    */
-/* File          :                                                       */
+/* File          : RCC_interface.h                                       */
 /* Date          :                                                       */
 /* Version       : V01                                                   */
 /* GitHub        : https://github.com/Abdelrahman-Hepish                 */
@@ -235,7 +235,16 @@ void RCC_voidSetClksState(tRCC_ClksState Copy_u8ClkStates) ;
   Description  : initalize clocks security state. 		   
 */
 void RCC_voidSetClkSecurityState(tRCC_ClkSecurityState Copy_u8ClkSecurityStates) ; 
-void RCC_voidTrimInternalHighSpeedClk(s16 Copy_s32Offset) ; 
+/* 
+  function name : RCC_voidTrimInternalHighSpeedClk
+  return type   : void 
+  complexity    : O(1) 
+  paramters     : 
+                 1- s16 : defines amount of increment / decrement  
+				 {-640 , 640 } 
+  Description  : if there is an error in internal clock you can trim it. 		   
+*/
+void RCC_voidTrimInternalHighSpeedClk(s16 Copy_s16Offset) ; 
 
 void RCC_voidSetMCuClkOutput(tRCC_MCuClkOutput Copy_u8MCO) ; 
 void RCC_voidSetPllInput(tRCC_PllInput Copy_u8PllIn) ; 
