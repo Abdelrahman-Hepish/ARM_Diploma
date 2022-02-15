@@ -196,34 +196,44 @@ typedef enum
    AHB_EQ_SYSCLK_BY_512 = 15 
 }tRCC_AHBPrescaler ;
 /* 
-function name : RCC_voidInitSystemClk
-return type   : void 
-complexity    : O(1) 
-paramters     : 
-               1- tRCC_ClksState    : defines all clock resources states (pll , HSI , HSE) & does HSE passes from pins or not 
-			                        {RCC_PLL_OFF_HSI_OFF_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_OFF_HSE_ON_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_ON_BYPASS_ON
-			                         RCC_PLL_ON_HSI_OFF_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_OFF_HSE_ON_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_ON_BYPASS_ON }
-			   2- tRCC_SystemClk    : defines which clock source the system runs on 			   
-			                        {RCC_SYSTCLK_HSI , RCC_SYSTCLK_HSE , RCC_SYSTCLK_PLL } 
-			   3- tRCC_PllInput     : defines pll ciruit input 	                   
-			                        {RCC_PLL_IN_HSI_BY_2 , RCC_PLL_IN_HSE , RCC_PLL_IN_HSE_BY_2 , RCC_PLL_NOT_USED }
-			   4- tRCC_PllMulFactor : defines pll circuit multiplaction factor 			   
-			                        {PLL_IN_X_1 , PLL_IN_X_2  , PLL_IN_X_3  , PLL_IN_X_4  , PLL_IN_X_5  , PLL_IN_X_6  , PLL_IN_X_7  , PLL_IN_X_8
-									PLL_IN_X_9 , PLL_IN_X_10 , PLL_IN_X_11 , PLL_IN_X_12 , PLL_IN_X_13	, PLL_IN_X_14 , PLL_IN_X_15	, PLL_IN_X_16}						
-Description  : initalize the previous paramters. 		   
+  function name : RCC_voidInitSystemClk
+  return type   : void 
+  complexity    : O(1) 
+  paramters     : 
+                 1- tRCC_ClksState    : defines all clock resources states (pll , HSI , HSE) & does HSE passes from pins or not 
+  			                        {RCC_PLL_OFF_HSI_OFF_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_OFF_HSE_ON_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_ON_BYPASS_ON
+  			                         RCC_PLL_ON_HSI_OFF_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_OFF_HSE_ON_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_ON_BYPASS_ON }
+  			     2- tRCC_SystemClk    : defines which clock source the system runs on 			   
+  			                        {RCC_SYSTCLK_HSI , RCC_SYSTCLK_HSE , RCC_SYSTCLK_PLL } 
+  			     3- tRCC_PllInput     : defines pll ciruit input 	                   
+  			                        {RCC_PLL_IN_HSI_BY_2 , RCC_PLL_IN_HSE , RCC_PLL_IN_HSE_BY_2 , RCC_PLL_NOT_USED }
+  			     4- tRCC_PllMulFactor : defines pll circuit multiplaction factor 			   
+  			                        {PLL_IN_X_1 , PLL_IN_X_2  , PLL_IN_X_3  , PLL_IN_X_4  , PLL_IN_X_5  , PLL_IN_X_6  , PLL_IN_X_7  , PLL_IN_X_8
+  									PLL_IN_X_9 , PLL_IN_X_10 , PLL_IN_X_11 , PLL_IN_X_12 , PLL_IN_X_13	, PLL_IN_X_14 , PLL_IN_X_15	, PLL_IN_X_16}						
+  Description  : initalize the previous paramters. 		   
 */	
 void RCC_voidInitSystemClk(tRCC_ClksState Copy_u8ClkStates , tRCC_SystemClk Copy_u8SystemClk ,tRCC_PllInput Copy_u8PllIn ,tRCC_PllMulFactor Copy_u8Pllmulfactor) ;  
 /* 
-function name : RCC_voidSetClksState
-return type   : void 
-complexity    : O(1) 
-paramters     : 
-               1- tRCC_ClksState    : defines all clock resources states (pll , HSI , HSE) & does HSE passes from pins or not 
-			                        {RCC_PLL_OFF_HSI_OFF_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_OFF_HSE_ON_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_ON_BYPASS_ON
-			                         RCC_PLL_ON_HSI_OFF_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_OFF_HSE_ON_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_ON_BYPASS_ON }					
-Description  : initalize clocks states. 		   
+  function name : RCC_voidSetClksState
+  return type   : void 
+  complexity    : O(1) 
+  paramters     : 
+                 1- tRCC_ClksState  : defines all clock resources states (pll , HSI , HSE) & does HSE passes from pins or not 
+  			                        {RCC_PLL_OFF_HSI_OFF_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_OFF_HSE_ON_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_ON_BYPASS_ON
+  			                         RCC_PLL_ON_HSI_OFF_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_OFF_HSE_ON_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_ON_BYPASS_ON }					
+  Description  : initalize clocks states. 		   
 */	
 void RCC_voidSetClksState(tRCC_ClksState Copy_u8ClkStates) ;
+/* 
+  function name : RCC_voidSetClkSecurityState
+  return type   : void 
+  complexity    : O(1) 
+  paramters     : 
+                 1- tRCC_ClkSecurityState : defines clock security state 
+  			                              {RCC_CLKSECURITY_DISABLE , RCC_CLKSECURITY_ENABLE }
+  			                           
+  Description  : initalize clocks security state. 		   
+*/
 void RCC_voidSetClkSecurityState(tRCC_ClkSecurityState Copy_u8ClkSecurityStates) ; 
 void RCC_voidTrimInternalHighSpeedClk(s16 Copy_s32Offset) ; 
 
