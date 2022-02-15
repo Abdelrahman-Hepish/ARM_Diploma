@@ -5,7 +5,7 @@
 /* Version       : V01                                                   */
 /* GitHub        : https://github.com/Abdelrahman-Hepish                 */
 /*************************************************************************/
-#ifndef __TEMPLATE_CONFIG_H__
-#define __TEMPLATE_CONFIG_H__
-
-#endif  __TEMPLATE_CONFIG_H__
+#ifndef __RCC_CONFIG_H__
+#define __RCC_CONFIG_H__
+		  
+#endif  __RCC_CONFIG_H__
