@@ -245,7 +245,15 @@ void RCC_voidSetClkSecurityState(tRCC_ClkSecurityState Copy_u8ClkSecurityStates)
   Description  : if there is an error in internal clock you can trim it. 		   
 */
 void RCC_voidTrimInternalHighSpeedClk(s16 Copy_s16Offset) ; 
-
+/* 
+  function name : RCC_voidSetMCuClkOutput
+  return type   : void 
+  complexity    : O(1) 
+  paramters     : 
+                 1- tRCC_MCuClkOutput : defines which clock to out on gpio pin  
+				 {RCC_MCO_NO_CLK , RCC_MCO_SYSTEM_CLK , RCC_MCO_HSI_CLK , RCC_MCO_HSE_CLK , RCC_MCO_PLL_BY_2 } 
+  Description  : if you want to out system clock to gpio . 		   
+*/
 void RCC_voidSetMCuClkOutput(tRCC_MCuClkOutput Copy_u8MCO) ; 
 void RCC_voidSetPllInput(tRCC_PllInput Copy_u8PllIn) ; 
 void RCC_voidSetPeripheralClkState(tRCC_Peripheral Copy_u8PeripheralID,tRCC_PeripheralClkState Copy_u8PeripheralClkState) ; 
