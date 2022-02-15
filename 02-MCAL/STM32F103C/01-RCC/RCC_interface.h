@@ -213,6 +213,16 @@ paramters     :
 Description  : initalize the previous paramters. 		   
 */	
 void RCC_voidInitSystemClk(tRCC_ClksState Copy_u8ClkStates , tRCC_SystemClk Copy_u8SystemClk ,tRCC_PllInput Copy_u8PllIn ,tRCC_PllMulFactor Copy_u8Pllmulfactor) ;  
+/* 
+function name : RCC_voidSetClksState
+return type   : void 
+complexity    : O(1) 
+paramters     : 
+               1- tRCC_ClksState    : defines all clock resources states (pll , HSI , HSE) & does HSE passes from pins or not 
+			                        {RCC_PLL_OFF_HSI_OFF_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_OFF_BYPASS_OFF , RCC_PLL_OFF_HSI_OFF_HSE_ON_BYPASS_OFF , RCC_PLL_OFF_HSI_ON_HSE_ON_BYPASS_ON
+			                         RCC_PLL_ON_HSI_OFF_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_OFF_BYPASS_OFF  , RCC_PLL_ON_HSI_OFF_HSE_ON_BYPASS_OFF  , RCC_PLL_ON_HSI_ON_HSE_ON_BYPASS_ON }					
+Description  : initalize clocks states. 		   
+*/	
 void RCC_voidSetClksState(tRCC_ClksState Copy_u8ClkStates) ;
 void RCC_voidSetClkSecurityState(tRCC_ClkSecurityState Copy_u8ClkSecurityStates) ; 
 void RCC_voidTrimInternalHighSpeedClk(s16 Copy_s32Offset) ; 
