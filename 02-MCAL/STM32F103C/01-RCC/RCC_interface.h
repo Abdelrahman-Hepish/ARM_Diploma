@@ -10,6 +10,10 @@
 #define AHB_OFFSET   0
 #define APB2_OFFSET  32
 #define APB1_OFFSET  64
+/* 
+ tRCC_Peripheral is an Enum (user defined data type) 
+ to facilitate dealing with different peripherals and which bus the peripheral located on
+*/
 typedef enum
 {
     RCC_AHB_DMA1      = AHB_OFFSET  + 0   ,
@@ -61,11 +65,20 @@ typedef enum
 	RCC_APB1_PWR      = APB1_OFFSET + 28  ,
 	RCC_APB1_DAC      = APB1_OFFSET + 29
 }tRCC_Peripheral ; 
+/* 
+ tRCC_PeripheralClkState is an Enum (user defined data type) 
+ to facilitate dealing with peripherals clock states 
+*/
 typedef enum
 {
 	RCC_PERIPHERAL_DISABLE = 0 , 
 	RCC_PERIPHERAL_ENABLE  = 1 
-}tRCC_PeripheralClkState ; 	
+}tRCC_PeripheralClkState ; 
+/* 
+ tRCC_ClksState is an Enum (user defined data type) 
+ to facilitate dealing with different clock sources states (PLL , HSI , HSE )  
+ and which passes & which not 
+*/	
 typedef enum
 {
 	RCC_PLL_OFF_HSI_OFF_HSE_OFF_BYPASS_OFF =  0B00000000,
@@ -76,13 +89,20 @@ typedef enum
 	RCC_PLL_ON_HSI_ON_HSE_OFF_BYPASS_OFF   =  0B00001100,
 	RCC_PLL_ON_HSI_OFF_HSE_ON_BYPASS_OFF   =  0B00001010,
 	RCC_PLL_ON_HSI_ON_HSE_ON_BYPASS_ON     =  0B00001111
-}tRCC_ClksState ; 	
+}tRCC_ClksState ; 
+/* 
+ tRCC_ClkSecurityState is an Enum (user defined data type) 
+ to facilitate dealing with security states (En/Dis) 
+*/		
 typedef enum 
 {
     RCC_CLKSECURITY_DISABLE = 0 , 
 	RCC_CLKSECURITY_ENABLE  = 1 
 }tRCC_ClkSecurityState ; 
-
+/* 
+ tRCC_MCuClkOutput is an Enum (user defined data type) 
+ to facilitate dealing with output clock 
+*/	
 typedef enum
 {
 	RCC_MCO_NO_CLK     = 0 , 
@@ -91,6 +111,10 @@ typedef enum
 	RCC_MCO_HSE_CLK    = 6 , 
 	RCC_MCO_PLL_BY_2   = 7 
 }tRCC_MCuClkOutput ; 
+/* 
+ tRCC_PllInput is an Enum (user defined data type) 
+ to facilitate dealing with pll input states  
+*/
 typedef enum 
 {
     RCC_PLL_IN_HSI_BY_2 = 0 , 
@@ -98,12 +122,20 @@ typedef enum
     RCC_PLL_IN_HSE_BY_2 = 3 ,
 	RCC_PLL_NOT_USED    = 4
 }tRCC_PllInput ; 
+/* 
+ tRCC_SystemClk is an Enum (user defined data type) 
+ to facilitate dealing with System clock which is directly enter to the processor  
+*/
 typedef enum 
 {
     RCC_SYSTCLK_HSI = 0 , 
     RCC_SYSTCLK_HSE = 1 , 
     RCC_SYSTCLK_PLL = 2 
-}tRCC_SystemClk ; 	
+}tRCC_SystemClk ; 
+/* 
+ tRCC_PllMulFactor is an Enum (user defined data type) 
+ to facilitate dealing with pll multiplaction factor  
+*/	
 typedef enum 
 {
 	PLL_IN_X_1  = 0b00001111 ,
@@ -123,7 +155,10 @@ typedef enum
     PLL_IN_X_15 = 0b00001101 , 
     PLL_IN_X_16 = 0b00001110  
 }tRCC_PllMulFactor ; 
-
+/* 
+ tRCC_APB2Prescaler is an Enum (user defined data type) 
+ to facilitate dealing with APB2 Prescaler from AHB bus  
+*/	
 typedef enum 
 {
    APB2_EQ_AHBCLK_BY_1  = 0 , 
@@ -132,7 +167,10 @@ typedef enum
    APB2_EQ_AHBCLK_BY_8  = 6 ,
    APB2_EQ_AHBCLK_BY_16 = 7 
 }tRCC_APB2Prescaler ; 
-
+/* 
+ tRCC_APB1Prescaler is an Enum (user defined data type) 
+ to facilitate dealing with APB1 Prescaler from AHB bus  
+*/	
 typedef enum 
 {
    APB1_EQ_AHBCLK_BY_1  = 0 , 	
@@ -141,6 +179,10 @@ typedef enum
    APB1_EQ_AHBCLK_BY_8  = 6 ,
    APB1_EQ_AHBCLK_BY_16 = 7 
 }tRCC_APB1Prescaler ;
+/* 
+ tRCC_APB2Prescaler is an Enum (user defined data type) 
+ to facilitate dealing with AHB Prescaler from system clock 
+*/	
 typedef enum 
 {
    AHB_EQ_SYSCLK_BY_1  = 0 , 
