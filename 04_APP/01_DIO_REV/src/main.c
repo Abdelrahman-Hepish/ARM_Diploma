@@ -8,8 +8,12 @@
 #include "..\..\..\01_LIB\02_BIT_MATH\BIT_MATH.h"
 #include "..\..\..\02_MCAL\STM32F103C\01_RCC\RCC_interface.h"
 #include "..\..\..\02_MCAL\STM32F103C\02_GPIO\GPIO_interface.h"
-
-void _7net4yma(void) ;
+void Pattern_1(void) ;
+void Pattern_2(void) ;
+void Pattern_3(void) ;
+void Pattern_4(void) ;
+void NotAccurateDelay(u32 delay) ;
+u8 led ;
 
 void main(void)
 {
@@ -22,30 +26,70 @@ void main(void)
 
 	while(1)
 	{
-		_7net4yma() ;
+		Pattern_1() ;
+		Pattern_2() ;
+		Pattern_3() ;
+		Pattern_4() ;
 	}
 }
-void _7net4yma(void)
+void NotAccurateDelay(u32 delay)
 {
-	int i , j , k  ;
-	for(i=0;i<=7;i++)
+	int i = 0 , j  ;
+	for(i = 0 ;i<=1000;i++)
 	{
-		GPIO_voidSetByteState(GPIO_PORTA,GPIO_LOW_BYTE,0) ;
-		for(j=0;j<=1000;j++)
+		for(j = 0 ;j<=delay;j++)
 		{
-			for(k=0;k<=1000;k++)
-			{
 
-			}
-		}
-		GPIO_voidSetPinState(GPIO_PORTA,i,GPIO_PIN_HIGH) ;
-		for(j=0;j<=1000;j++)
-		{
-			for(k=0;k<=1000;k++)
-			{
-
-			}
 		}
 	}
-
+}
+void Pattern_1(void)
+{
+	for(int i = 1 ;i<=4;i++)
+	{
+		for(int j = 0;j<8;j++)
+		{
+			GPIO_voidSetByteState(GPIO_PORTA,GPIO_LOW_BYTE,0X00) ;
+			GPIO_voidSetPinState(GPIO_PORTA,j,GPIO_PIN_HIGH) ;
+			NotAccurateDelay(200) ;
+		}
+		for(int j = 7;j>=0;j--)
+		{
+			GPIO_voidSetByteState(GPIO_PORTA,GPIO_LOW_BYTE,0X00) ;
+			GPIO_voidSetPinState(GPIO_PORTA,j,GPIO_PIN_HIGH) ;
+			NotAccurateDelay(200) ;
+		}
+	}
+}
+void Pattern_2(void)
+{
+	for(int i = 1 ;i<=4;i++)
+	{
+		for(int j = 3 , k = 4 ;j>=0;j--,k++)
+		{
+			GPIO_voidSetPinState(GPIO_PORTA,j,GPIO_PIN_HIGH) ;
+			GPIO_voidSetPinState(GPIO_PORTA,k,GPIO_PIN_HIGH) ;
+			NotAccurateDelay(200) ;
+		}
+		for(int j = 0 , k = 7 ;j<=3;j++,k--)
+		{
+			GPIO_voidSetPinState(GPIO_PORTA,j,GPIO_PIN_LOW) ;
+			GPIO_voidSetPinState(GPIO_PORTA,k,GPIO_PIN_LOW) ;
+			NotAccurateDelay(200) ;
+		}
+	}
+}
+void Pattern_3(void)
+{
+	for(int i = 1 ;i<=8;i++)
+	{
+		GPIO_voidSetByteState(GPIO_PORTA,GPIO_LOW_BYTE,0X00) ;
+		NotAccurateDelay(500) ;
+		GPIO_voidSetByteState(GPIO_PORTA,GPIO_LOW_BYTE,0xff) ;
+		NotAccurateDelay(500) ;
+	}
+}
+void Pattern_4(void)
+{
+	GPIO_voidSetPinState(GPIO_PORTA,led,!GPIO_u8GetPinState(GPIO_PORTA,led)) ;
 }
