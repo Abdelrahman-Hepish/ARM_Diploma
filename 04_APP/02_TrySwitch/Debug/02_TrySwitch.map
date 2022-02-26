@@ -1620,10 +1620,10 @@ END GROUP
 
 .inits          0x08000350       0x28
                 0x08000350                __data_regions_array_start = .
-                0x08000350        0x4 LONG 0x8001598 LOADADDR (.data)
+                0x08000350        0x4 LONG 0x8001614 LOADADDR (.data)
                 0x08000354        0x4 LONG 0x20000000 ADDR (.data)
                 0x08000358        0x4 LONG 0x20000088 (ADDR (.data) + SIZEOF (.data))
-                0x0800035c        0x4 LONG 0x8001598 LOADADDR (.data_CCMRAM)
+                0x0800035c        0x4 LONG 0x8001614 LOADADDR (.data_CCMRAM)
                 0x08000360        0x4 LONG 0x0 ADDR (.data_CCMRAM)
                 0x08000364        0x4 LONG 0x0 (ADDR (.data_CCMRAM) + SIZEOF (.data_CCMRAM))
                 0x08000368                __data_regions_array_end = .
@@ -1655,7 +1655,7 @@ END GROUP
 .flashtext
  *(.flashtext .flashtext.*)
 
-.text           0x08000378     0x121f
+.text           0x08000378     0x129b
  *(.text .text.*)
  .text._exit    0x08000378        0x2 ./system/src/newlib/_exit.o
                 0x08000378                _exit
@@ -1734,105 +1734,105 @@ END GROUP
  .text.RCC_voidInitSystemClk
                 0x08000b00       0x20 ./src/RCC_program.o
                 0x08000b00                RCC_voidInitSystemClk
- .text.main     0x08000b20       0x9c ./src/main.o
+ .text.main     0x08000b20      0x118 ./src/main.o
                 0x08000b20                main
- .text.__errno  0x08000bbc        0xc e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-errno.o)
-                0x08000bbc                __errno
+ .text.__errno  0x08000c38        0xc e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-errno.o)
+                0x08000c38                __errno
  .text._vsnprintf_r
-                0x08000bc8       0x58 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08000bc8                _vsniprintf_r
-                0x08000bc8                _vsnprintf_r
+                0x08000c44       0x58 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x08000c44                _vsniprintf_r
+                0x08000c44                _vsnprintf_r
  .text.vsnprintf
-                0x08000c20       0x1c e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08000c20                vsniprintf
-                0x08000c20                vsnprintf
+                0x08000c9c       0x1c e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x08000c9c                vsniprintf
+                0x08000c9c                vsnprintf
  .text.__ssputs_r
-                0x08000c3c       0xb4 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08000c3c                __ssputs_r
+                0x08000cb8       0xb4 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08000cb8                __ssputs_r
  .text._svfprintf_r
-                0x08000cf0      0x1ec e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08000cf0                _svfiprintf_r
-                0x08000cf0                _svfprintf_r
+                0x08000d6c      0x1ec e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08000d6c                _svfiprintf_r
+                0x08000d6c                _svfprintf_r
  .text._printf_common
-                0x08000edc       0xec e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08000edc                _printf_common
+                0x08000f58       0xec e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08000f58                _printf_common
  .text._printf_i
-                0x08000fc8      0x224 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08000fc8                _printf_i
- .text.memchr   0x080011ec       0x1c e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memchr-stub.o)
-                0x080011ec                memchr
- .text.memcpy   0x08001208       0x16 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x08001208                memcpy
- .text.memmove  0x0800121e       0x32 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memmove.o)
-                0x0800121e                memmove
- .text._free_r  0x08001250       0x98 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-freer.o)
-                0x08001250                _free_r
+                0x08001044      0x224 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08001044                _printf_i
+ .text.memchr   0x08001268       0x1c e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memchr-stub.o)
+                0x08001268                memchr
+ .text.memcpy   0x08001284       0x16 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x08001284                memcpy
+ .text.memmove  0x0800129a       0x32 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-memmove.o)
+                0x0800129a                memmove
+ .text._free_r  0x080012cc       0x98 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-freer.o)
+                0x080012cc                _free_r
  .text._malloc_r
-                0x080012e8       0xb4 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x080012e8                _malloc_r
+                0x08001364       0xb4 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x08001364                _malloc_r
  .text._realloc_r
-                0x0800139c       0x4c e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-reallocr.o)
-                0x0800139c                _realloc_r
- .text._sbrk_r  0x080013e8       0x20 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-sbrkr.o)
-                0x080013e8                _sbrk_r
+                0x08001418       0x4c e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-reallocr.o)
+                0x08001418                _realloc_r
+ .text._sbrk_r  0x08001464       0x20 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-sbrkr.o)
+                0x08001464                _sbrk_r
  .text.__malloc_lock
-                0x08001408        0x2 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-mlock.o)
-                0x08001408                __malloc_lock
+                0x08001484        0x2 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-mlock.o)
+                0x08001484                __malloc_lock
  .text.__malloc_unlock
-                0x0800140a        0x2 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-mlock.o)
-                0x0800140a                __malloc_unlock
+                0x08001486        0x2 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-mlock.o)
+                0x08001486                __malloc_unlock
  .text._malloc_usable_size_r
-                0x0800140c       0x10 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-msizer.o)
-                0x0800140c                _malloc_usable_size_r
+                0x08001488       0x10 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-msizer.o)
+                0x08001488                _malloc_usable_size_r
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.dumpExceptionStack.str1.4
-                0x0800141c      0x11a ./system/src/cortexm/exception_handlers.o
- *fill*         0x08001536        0x2 
+                0x08001498      0x11a ./system/src/cortexm/exception_handlers.o
+ *fill*         0x080015b2        0x2 
  .rodata.str1.4
-                0x08001538       0x2c ./system/src/cortexm/exception_handlers.o
+                0x080015b4       0x2c ./system/src/cortexm/exception_handlers.o
                                  0x2a (size before relaxing)
  .rodata._svfprintf_r.str1.1
-                0x08001564       0x11 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x080015e0       0x11 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x08001575       0x22 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x080015f1       0x22 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
  *(vtable)
  *(.eh_frame*)
  *(.glue_7)
- .glue_7        0x08001597        0x0 linker stubs
+ .glue_7        0x08001613        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08001597        0x0 linker stubs
+ .glue_7t       0x08001613        0x0 linker stubs
 
-.vfp11_veneer   0x08001598        0x0
- .vfp11_veneer  0x08001598        0x0 linker stubs
+.vfp11_veneer   0x08001614        0x0
+ .vfp11_veneer  0x08001614        0x0 linker stubs
 
-.v4_bx          0x08001598        0x0
- .v4_bx         0x08001598        0x0 linker stubs
+.v4_bx          0x08001614        0x0
+ .v4_bx         0x08001614        0x0 linker stubs
 
-.iplt           0x08001598        0x0
- .iplt          0x08001598        0x0 ./system/src/newlib/_exit.o
+.iplt           0x08001614        0x0
+ .iplt          0x08001614        0x0 ./system/src/newlib/_exit.o
 
-.rel.dyn        0x08001598        0x0
- .rel.iplt      0x08001598        0x0 ./system/src/newlib/_exit.o
+.rel.dyn        0x08001614        0x0
+ .rel.iplt      0x08001614        0x0 ./system/src/newlib/_exit.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08001598                . = ALIGN (0x4)
-                0x08001598                __exidx_start = .
+                0x08001614                . = ALIGN (0x4)
+                0x08001614                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08001598                __exidx_end = .
-                0x08001598                . = ALIGN (0x4)
-                0x08001598                _etext = .
-                0x08001598                __etext = .
+                0x08001614                __exidx_end = .
+                0x08001614                . = ALIGN (0x4)
+                0x08001614                _etext = .
+                0x08001614                __etext = .
 
-.data_CCMRAM    0x00000000        0x0 load address 0x08001598
+.data_CCMRAM    0x00000000        0x0 load address 0x08001614
  FILL mask 0xff
  *(.data.CCMRAM .data.CCMRAM.*)
                 0x00000000                . = ALIGN (0x4)
-                0x08001598                _sidata = LOADADDR (.data)
+                0x08001614                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x88 load address 0x08001598
+.data           0x20000000       0x88 load address 0x08001614
  FILL mask 0xff
                 0x20000000                _sdata = .
                 0x20000000                __data_start__ = .
@@ -1858,7 +1858,7 @@ END GROUP
                 0x20000088                _edata = .
                 0x20000088                __data_end__ = .
 
-.igot.plt       0x20000088        0x0 load address 0x08001620
+.igot.plt       0x20000088        0x0 load address 0x0800169c
  .igot.plt      0x20000088        0x0 ./system/src/newlib/_exit.o
 
 .bss_CCMRAM     0x00000000        0x0
@@ -2069,7 +2069,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x58ef
+.debug_info     0x00000000     0x59a7
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x956 ./system/src/newlib/_exit.o
  .debug_info    0x00000956      0x942 ./system/src/newlib/_sbrk.o
@@ -2083,9 +2083,9 @@ END GROUP
  .debug_info    0x000047f5       0xca ./system/src/cmsis/vectors_stm32f10x.o
  .debug_info    0x000048bf      0x46a ./src/GPIO_program.o
  .debug_info    0x00004d29      0x670 ./src/RCC_program.o
- .debug_info    0x00005399      0x556 ./src/main.o
+ .debug_info    0x00005399      0x60e ./src/main.o
 
-.debug_abbrev   0x00000000     0x1555
+.debug_abbrev   0x00000000     0x156f
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1f3 ./system/src/newlib/_exit.o
  .debug_abbrev  0x000001f3      0x1fc ./system/src/newlib/_sbrk.o
@@ -2099,9 +2099,9 @@ END GROUP
  .debug_abbrev  0x000011ba       0x9d ./system/src/cmsis/vectors_stm32f10x.o
  .debug_abbrev  0x00001257      0x104 ./src/GPIO_program.o
  .debug_abbrev  0x0000135b      0x118 ./src/RCC_program.o
- .debug_abbrev  0x00001473       0xe2 ./src/main.o
+ .debug_abbrev  0x00001473       0xfc ./src/main.o
 
-.debug_line     0x00000000     0x2b2f
+.debug_line     0x00000000     0x2b50
  *(.debug_line)
  .debug_line    0x00000000      0x31f ./system/src/newlib/_exit.o
  .debug_line    0x0000031f      0x2d3 ./system/src/newlib/_sbrk.o
@@ -2115,7 +2115,7 @@ END GROUP
  .debug_line    0x0000250c       0xf4 ./system/src/cmsis/vectors_stm32f10x.o
  .debug_line    0x00002600      0x202 ./src/GPIO_program.o
  .debug_line    0x00002802      0x1f6 ./src/RCC_program.o
- .debug_line    0x000029f8      0x137 ./src/main.o
+ .debug_line    0x000029f8      0x158 ./src/main.o
 
 .debug_frame    0x00000000      0x920
  *(.debug_frame)
@@ -2146,7 +2146,7 @@ END GROUP
  .debug_frame   0x000008d0       0x30 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-mlock.o)
  .debug_frame   0x00000900       0x20 e:/arm/tools/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-msizer.o)
 
-.debug_str      0x00000000    0x57eaa
+.debug_str      0x00000000    0x57eaf
  *(.debug_str)
  .debug_str     0x00000000     0x7d11 ./system/src/newlib/_exit.o
                                0x7ee4 (size before relaxing)
@@ -2172,10 +2172,10 @@ END GROUP
                                0x405b (size before relaxing)
  .debug_str     0x00056ded     0x10a9 ./src/RCC_program.o
                                0x4212 (size before relaxing)
- .debug_str     0x00057e96       0x14 ./src/main.o
-                               0x3996 (size before relaxing)
+ .debug_str     0x00057e96       0x19 ./src/main.o
+                               0x3995 (size before relaxing)
 
-.debug_loc      0x00000000     0x10c1
+.debug_loc      0x00000000     0x10ff
  *(.debug_loc)
  .debug_loc     0x00000000       0x85 ./system/src/newlib/_sbrk.o
  .debug_loc     0x00000085      0x1a9 ./system/src/newlib/_startup.o
@@ -2186,7 +2186,7 @@ END GROUP
  .debug_loc     0x00000739       0xdf ./system/src/cmsis/system_stm32f10x.o
  .debug_loc     0x00000818      0x5d6 ./src/GPIO_program.o
  .debug_loc     0x00000dee      0x2b4 ./src/RCC_program.o
- .debug_loc     0x000010a2       0x1f ./src/main.o
+ .debug_loc     0x000010a2       0x5d ./src/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
