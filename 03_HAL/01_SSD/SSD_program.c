@@ -36,6 +36,7 @@ static unsigned char ssd_data [NUMBER_OF_SYMBOLS] =
 void static SSD_SetPinsAsOutput(tSSD ssd) ;
 void static SSD_TurnAllOff(void) ;
 void static SSD_SetHardWare(tSSD ssd ) ;
+void static UTILITES_DelayMS(u16 TIME) ;
 
 void SSD_Init(tSSD ssd ,tSSD_State init_state ,tSSD_Symbol init_symbol )
 {
@@ -56,7 +57,7 @@ void SSD_Update (void)
         /* Set current ssd data on Port-D and then makes it work */
       SSD_SetHardWare(current_ssd ) ;
         /* Delay */
-       UTILITES_DelayMS(DELAY_TEIM) ;
+      // UTILITES_DelayMS(DELAY_TEIM) ;
     }
   }
 }
@@ -88,7 +89,7 @@ void SSD_SetState(tSSD ssd ,tSSD_State state)
 void static SSD_SetPinsAsOutput(tSSD ssd)
 {
     /* Set Data Register as Output */
-    GPIO_voidSetByteState(SSD_PORT,SSD_BYTE,PIN_NM_OUTPUT_2MHZ) ;
+	GPIO_voidSetByteMode(SSD_PORT,SSD_BYTE,PIN_NM_OUTPUT_2MHZ) ;
     /* Set State pin as Output */
      switch(ssd)
     {
@@ -126,7 +127,7 @@ void static SSD_SetHardWare(tSSD ssd )
          + ssd_symbols : is an array of 4 "we have 4 ssds in our kit" from data type struct SSD_Info that groups the current symbol of that SSD and it's state.
                        : as we want to get the current ssd symbol we go to the current ssd and get it's value
       */
-    GPIO_voidSetByteState(SSD_PORT, SSD_TYPE ^ ssd_data[ssd_info[ssd].ssd_symbol]) ;
+    GPIO_voidSetByteState(SSD_PORT,SSD_BYTE,  ssd_data[ssd_info[ssd].ssd_symbol]) ;
      /* Turn on current SSD */
     switch(ssd)
     {
@@ -143,4 +144,14 @@ void static SSD_SetHardWare(tSSD ssd )
             GPIO_voidSetPinState(SSD_EN_PORT,SSD1_EN_PIN, SSD_ON) ;
         break ;
     }
+}
+void static UTILITES_DelayMS(u16 TIME)
+{
+	for(int i = 0 ;i<=TIME;i++)
+	{
+		for(int j = 0 ;j<=TIME;j++)
+		{
+			asm("NOP") ;
+		}
+	}
 }
