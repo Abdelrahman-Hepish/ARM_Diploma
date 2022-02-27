@@ -8,7 +8,7 @@
 #ifndef __SSD_CONFIG_H__
 #define __SSD_CONFIG_H__
 
-#define NUMBER_OF_SDDs 4
+#define NUMBER_OF_SDDs 1
 
 /* 
   Choices : 
