@@ -11,6 +11,7 @@
 #include "..\..\..\03_HAL\01_SSD\SSD_interface.h"
 #include "..\..\..\03_HAL\01_SSD\SSD_private.h"
 #include "..\..\..\03_HAL\01_SSD\SSD_config.h"
+
 typedef struct
 {
     tSSD_Symbol ssd_symbol ;
@@ -32,10 +33,10 @@ static unsigned char ssd_data [NUMBER_OF_SYMBOLS] =
     0b00000000
 };
 
-void static SSD_SetPinsAsOutput(tSSD ssd) ;
-void static SSD_TurnAllOff(void) ;
-void static SSD_SetHardWare(tSSD ssd ) ;
-void static UTILITES_DelayMS(u16 TIME) ;
+static void  SSD_SetPinsAsOutput(tSSD ssd) ;
+static void  SSD_TurnAllOff(void) ;
+static void  SSD_SetHardWare(tSSD ssd ) ;
+static void  UTILITES_DelayMS(u16 TIME) ;
 
 void SSD_Init(tSSD ssd ,tSSD_State init_state ,tSSD_Symbol init_symbol )
 {
@@ -56,7 +57,7 @@ void SSD_Update (void)
         /* Set current ssd data on Port-D and then makes it work */
       SSD_SetHardWare(current_ssd ) ;
         /* Delay */
-      // UTILITES_DelayMS(DELAY_TEIM) ;
+       UTILITES_DelayMS(DELAY_TEIM) ;
     }
   }
 }
@@ -144,7 +145,7 @@ void static SSD_SetHardWare(tSSD ssd )
         break ;
     }
 }
-void static UTILITES_DelayMS(u16 TIME)
+static void UTILITES_DelayMS(u16 TIME)
 {
 	for(int i = 0 ;i<=TIME;i++)
 	{

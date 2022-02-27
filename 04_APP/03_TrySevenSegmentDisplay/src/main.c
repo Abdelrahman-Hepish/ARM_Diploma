@@ -33,7 +33,7 @@ void main(void)
         }
         if(dec == GPIO_PIN_LOW)
         {
-        	current_symbol = (current_symbol - 1)%11 ;
+        	current_symbol = ((current_symbol - 1)+11)%11 ;
         }
         SSD_SetSymbol(SSD_1,current_symbol) ;
         SSD_Update() ;

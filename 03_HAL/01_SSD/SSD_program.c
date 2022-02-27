@@ -57,7 +57,7 @@ void SSD_Update (void)
         /* Set current ssd data on Port-D and then makes it work */
       SSD_SetHardWare(current_ssd ) ;
         /* Delay */
-      // UTILITES_DelayMS(DELAY_TEIM) ;
+       UTILITES_DelayMS(DELAY_TEIM) ;
     }
   }
 }
