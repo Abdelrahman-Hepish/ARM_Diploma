@@ -15,5 +15,5 @@ typedef enum
   SCB_2_GRP_8_SUB  = 0x05FA06000 , 
   SCB_0_GRP_16_SUB = 0x05FA07000 
 }tSCB_InterruptGroupSys ; 
-
+void SCB_SetInterruptGroupingSystem(tSCB_InterruptGroupSys Copy_u32SysGrp)  ;
 #endif  // __SCB_INTERFACE_H__
