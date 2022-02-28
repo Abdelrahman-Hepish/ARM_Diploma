@@ -7,63 +7,64 @@
 /*************************************************************************/
 #include "..\..\..\01_LIB\01_STD_TYPES\STD_TYPES.h"
 #include "..\..\..\01_LIB\02_BIT_MATH\BIT_MATH.h"
-#include "..\..\..\02_MCAL\STM32F103C\03_NVIC\NVIC_interface.h"
+#include "..\include\NVIC_interface2.h"
 #include "..\..\..\02_MCAL\STM32F103C\03_NVIC\NVIC_config.h"
 #include "..\..\..\02_MCAL\STM32F103C\03_NVIC\NVIC_private.h"
 
 void NVIC_voidEnablePerInterrupt(tNVIC_tPeripheral Copy_u8PeripheralName) 
 {
-	 if(Copy_u8PeripheralName <= NVIC_I2C1_EV ) 
+
+	 if(Copy_u8PeripheralName <= NVIC_I2C1_ER )
 	 {
 		 SET_BIT(NVIC_ISER0,Copy_u8PeripheralName) ; 
 	 }else 
 	 {
-		Copy_u8PeripheralName -=  NVIC_I2C1_ER ; 
+		Copy_u8PeripheralName -=  NVIC_TIM4 ;
 		SET_BIT(NVIC_ISER1,Copy_u8PeripheralName) ;  
 	 }
 }
 void NVIC_voidDisablePerInterrupt(tNVIC_tPeripheral Copy_u8PeripheralName) 
 {
-	 if(Copy_u8PeripheralName <= NVIC_I2C1_EV ) 
+	 if(Copy_u8PeripheralName <= NVIC_I2C1_ER )
 	 {
 		 SET_BIT(NVIC_ICER0,Copy_u8PeripheralName) ; 
 	 }else 
 	 {
-		Copy_u8PeripheralName -=  NVIC_I2C1_ER ; 
+		Copy_u8PeripheralName -=  NVIC_TIM4 ;
 		SET_BIT(NVIC_ICER1,Copy_u8PeripheralName) ;  
 	 }
 }
 void NVIC_voidSetPendingFlagPerInterrupt(tNVIC_tPeripheral Copy_u8PeripheralName) 
 {
-	 if(Copy_u8PeripheralName <= NVIC_I2C1_EV ) 
+	 if(Copy_u8PeripheralName <= NVIC_I2C1_ER )
 	 {
 		 SET_BIT(NVIC_ISPR0,Copy_u8PeripheralName) ; 
 	 }else 
 	 {
-		Copy_u8PeripheralName -=  NVIC_I2C1_ER ; 
+		Copy_u8PeripheralName -=  NVIC_TIM4 ;
 		SET_BIT(NVIC_ISPR1,Copy_u8PeripheralName) ;  
 	 }
 }
 void NVIC_voidClearPendingFlagPerInterrupt(tNVIC_tPeripheral Copy_u8PeripheralName) 
 {
-	 if(Copy_u8PeripheralName <= NVIC_I2C1_EV ) 
+	 if(Copy_u8PeripheralName <= NVIC_I2C1_ER )
 	 {
 		 SET_BIT(NVIC_ICPR0,Copy_u8PeripheralName) ; 
 	 }else 
 	 {
-		Copy_u8PeripheralName -=  NVIC_I2C1_ER ; 
+		Copy_u8PeripheralName -=  NVIC_TIM4 ;
 		SET_BIT(NVIC_ICPR1,Copy_u8PeripheralName) ;  
 	 }
 }
 tNVIC_ActiveFlagStatus NVIC_u8GetActiveFlagStatus(tNVIC_tPeripheral Copy_u8PeripheralName) 
 {
 	tNVIC_ActiveFlagStatus ret = NVIC_ACTIVE_FLAG_DISABLED ; 
-     if(Copy_u8PeripheralName <= NVIC_I2C1_EV ) 
+     if(Copy_u8PeripheralName <= NVIC_TIM3 )
 	 {
 		ret =  GET_BIT(NVIC_IABR0,Copy_u8PeripheralName) ; 
 	 }else 
 	 {
-		Copy_u8PeripheralName -=  NVIC_I2C1_ER ; 
+		Copy_u8PeripheralName -=  NVIC_TIM4 ;
 		ret =  GET_BIT(NVIC_IABR1,Copy_u8PeripheralName) ;  
 	 }
 	 return ret ; 

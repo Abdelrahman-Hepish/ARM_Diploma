@@ -8,7 +8,7 @@
 #include "..\..\..\01_LIB\02_BIT_MATH\BIT_MATH.h"
 #include "..\..\..\02_MCAL\STM32F103C\01_RCC\RCC_interface.h"
 #include "..\..\..\02_MCAL\STM32F103C\02_GPIO\GPIO_interface.h"
-#include "..\..\..\02_MCAL\STM32F103C\03_NVIC\NVIC_interface.h"
+#include "..\include\NVIC_interface2.h"
 #include "..\..\..\02_MCAL\STM32F103C\04_SCB\SCB_interface.h"
 
 void TempDelay(void) ;

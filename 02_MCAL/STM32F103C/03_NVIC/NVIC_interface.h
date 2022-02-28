@@ -7,72 +7,134 @@
 /*************************************************************************/
 #ifndef __NVIC_INTERFACE_H__
 #define __NVIC_INTERFACE_H__
-typedef enum 
+/*
+typedef enum
 {
-  NVIC_WWDG          = 0   ,
-  NVIC_PVD                 ,
-  NVIC_TAMPER              ,
-  NVIC_RTC                 ,
-  NVIC_FLASH               ,
-  NVIC_RCC                 ,
-  NVIC_EXTI0               ,
-  NVIC_EXTI1               ,
-  NVIC_EXTI2               ,
-  NVIC_EXTI3               ,
-  NVIC_EXTI4               ,
-  NVIC_DMA1_Channel1       ,
-  NVIC_DMA1_Channel2       ,
-  NVIC_DMA1_Channel3       ,
-  NVIC_DMA1_Channel4       ,
-  NVIC_DMA1_Channel5       ,
-  NVIC_DMA1_Channel6       ,
-  NVIC_DMA1_Channel7       ,
-  NVIC_ADC1_2              ,
-  NVIC_USB_HP_CAN_         ,
-  NVIC_TX                  ,
-  NVIC_USB_LP_CAN_         ,
-  NVIC_RX0                 ,
-  NVIC_CAN_RX1             ,
-  NVIC_CAN_SCE             ,
-  NVIC_EXTI9_5             ,
-  NVIC_TIM1_BRK            ,
-  NVIC_TIM1_UP             ,
-  NVIC_TIM1_TRG_COM        ,
-  NVIC_TIM1_CC             ,
-  NVIC_TIM2                ,
-  NVIC_TIM3                ,
-  NVIC_TIM4                ,
-  NVIC_I2C1_EV             ,
-  NVIC_I2C1_ER             ,
-  NVIC_I2C2_EV             ,
-  NVIC_I2C2_ER             ,
-  NVIC_SPI1                ,
-  NVIC_SPI2                ,
-  NVIC_USART1              ,
-  NVIC_USART2              ,
-  NVIC_USART3              ,
-  NVIC_EXTI15_10           ,
-  NVIC_RTCAlarm            ,
-  NVIC_USBWakeup           ,
-  NVIC_TIM8_BRK            ,
-  NVIC_TIM8_UP             ,
-  NVIC_TIM8_TRG_COM        ,
-  NVIC_TIM8_CC             ,
-  NVIC_ADC3                ,
-  NVIC_FSMC                ,
-  NVIC_SDIO                ,
-  NVIC_TIM5                ,
-  NVIC_SPI3                ,
-  NVIC_UART4               ,
-  NVIC_UART5               ,
-  NVIC_TIM6                ,
-  NVIC_TIM7                ,
-  NVIC_DMA2_Channel1       ,
-  NVIC_DMA2_Channel2       ,
-  NVIC_DMA2_Channel3       ,
+  NVIC_WWDG          = 0      ,  // WWDG
+  NVIC_PVD                    ,  // PVD
+  NVIC_TAMPER                 ,  // TAMPER
+  NVIC_RTC                    ,  // RTC
+  NVIC_FLASH                  ,  // FLASH
+  NVIC_RCC                    ,  // RCC
+  NVIC_EXTI0                  ,  // EXTI0
+  NVIC_EXTI1                  ,  // EXTI1
+  NVIC_EXTI2                  ,  // EXTI2
+  NVIC_EXTI3                  ,  // EXTI3
+  NVIC_EXTI4                  ,  // EXTI4
+  NVIC_DMA1_Channel4          ,  // DMA1_Channel4
+  NVIC_DMA1_Channel5          ,  // DMA1_Channel5
+  NVIC_DMA1_Channel6          ,  // DMA1_Channel6
+  NVIC_DMA1_Channel7          ,  // DMA1_Channel7
+  NVIC_ADC1_2                 ,  // ADC1_2
+  NVIC_USB_HP_CAN_            ,  // USB_HP_CAN_
+  NVIC_TX                     ,              // TX
+  NVIC_USB_LP_CAN_            ,  // USB_LP_CAN_
+  NVIC_RX0                    ,  // RX0
+  NVIC_CAN_RX1                ,  // CAN_RX1
+  NVIC_CAN_SCE                ,  // CAN_SCE
+  NVIC_EXTI9_5                ,  // EXTI9_5
+  NVIC_TIM1_BRK               ,  // TIM1_BRK
+  NVIC_TIM1_UP                ,  // TIM1_UP
+  NVIC_TIM1_TRG_COM           ,  // TIM1_TRG_COM
+  NVIC_TIM1_CC                ,  // TIM1_CC
+  NVIC_TIM2                   ,  // TIM2
+  NVIC_TIM3                   ,  // TIM3
+  NVIC_TIM4                   ,  // TIM4
+  NVIC_I2C1_EV                ,  // I2C1_EV
+  NVIC_I2C1_ER  = 31              ,  // I2C1_ER
+  NVIC_I2C2_EV                ,  // I2C2_EV
+  NVIC_I2C2_ER                ,  // I2C2_ER
+  NVIC_SPI1                   ,  // SPI1
+  NVIC_SPI2                   ,  // SPI2
+  NVIC_USART1                 ,  // USART1
+  NVIC_USART2                 ,  // USART2
+  NVIC_USART3                 ,  // USART3
+  NVIC_EXTI15_10              ,  // EXTI15_10
+  NVIC_RTCAlarm               ,  // RTCAlarm
+  NVIC_USBWakeup              ,  //
+  NVIC_TIM8_BRK               ,  //
+  NVIC_TIM8_UP                ,
+  NVIC_TIM8_TRG_COM           ,
+  NVIC_TIM8_CC                ,
+  NVIC_ADC3                   ,
+  NVIC_FSMC                   ,
+  NVIC_SDIO                   ,
+  NVIC_TIM5                   ,
+  NVIC_SPI3                   ,
+  NVIC_UART4                  ,
+  NVIC_UART5                  ,
+  NVIC_TIM6                   ,
+  NVIC_TIM7                   ,
+  NVIC_DMA2_Channel1          ,
+  NVIC_DMA2_Channel2          ,
+  NVIC_DMA2_Channel3          ,
   NVIC_DMA2_Channel4_5
-}tNVIC_tPeripheral ; 
-
+}tNVIC_tPeripheral ;
+*/
+/* numbers for debugging */ 
+typedef enum
+{
+  NVIC_WWDG            = 0    ,  
+  NVIC_PVD             = 1    , 
+  NVIC_TAMPER          = 2    ,  
+  NVIC_RTC             = 3    , 
+  NVIC_FLASH           = 4    , 
+  NVIC_RCC             = 5    ,  
+  NVIC_EXTI0           = 6    , 
+  NVIC_EXTI1           = 7    , 
+  NVIC_EXTI2           = 8    , 
+  NVIC_EXTI3           = 9    , 
+  NVIC_EXTI4           = 10   ,
+  NVIC_DMA1_Channel    = 11   , 
+  NVIC_DMA1_Channe2    = 12   , 
+  NVIC_DMA1_Channe3    = 13   , 
+  NVIC_DMA1_Channel4   = 14   , 
+  NVIC_DMA1_Channel5   = 15   ,  
+  NVIC_DMA1_Channel6   = 16   ,  
+  NVIC_DMA1_Channel7   = 17   ,  
+  NVIC_ADC1_2          = 18   ,  
+  NVIC_USB_HP_CAN_TX   = 19   ,  
+  NVIC_USB_LP_CAN_RX0  = 20   ,  
+  NVIC_CAN_RX1         = 21   , 
+  NVIC_CAN_SCE         = 22   , 
+  NVIC_EXTI9_5         = 23   , 
+  NVIC_TIM1_BRK        = 24   ,  
+  NVIC_TIM1_UP         = 25   ,  
+  NVIC_TIM1_TRG_COM    = 26   ,  
+  NVIC_TIM1_CC         = 27   ,  
+  NVIC_TIM2            = 28   ,  
+  NVIC_TIM3            = 29   ,  
+  NVIC_TIM4            = 30   ,  
+  NVIC_I2C1_EV         = 31   ,  
+  NVIC_I2C1_ER         = 32   ,  
+  NVIC_I2C2_EV         = 33   ,  
+  NVIC_I2C2_ER         = 34   ,  
+  NVIC_SPI1            = 35   ,  
+  NVIC_SPI2            = 36   ,  
+  NVIC_USART1          = 37   ,  
+  NVIC_USART2          = 38   ,  
+  NVIC_USART3          = 39   ,  
+  NVIC_EXTI15_10       = 40   ,  
+  NVIC_RTCAlarm        = 41   ,  
+  NVIC_USBWakeup       = 42   ,
+  NVIC_TIM8_BRK        = 43   ,
+  NVIC_TIM8_UP         = 44   ,
+  NVIC_TIM8_TRG_COM    = 45   ,
+  NVIC_TIM8_CC         = 46   ,
+  NVIC_ADC3            = 47   ,
+  NVIC_FSMC            = 48   ,
+  NVIC_SDIO            = 49   ,
+  NVIC_TIM5            = 50   ,
+  NVIC_SPI3            = 51   ,
+  NVIC_UART4           = 52   ,
+  NVIC_UART5           = 53   ,
+  NVIC_TIM6            = 54   ,
+  NVIC_TIM7            = 55   ,
+  NVIC_DMA2_Channel1   = 56   ,
+  NVIC_DMA2_Channel2   = 57   ,
+  NVIC_DMA2_Channel3   = 58   ,
+  NVIC_DMA2_Channel4_5 = 59             
+}tNVIC_tPeripheral ;
 typedef enum
 {
    NVIC_PERIPHERAL_DISABLE = 0 , 
@@ -94,4 +156,5 @@ void NVIC_voidSetInterruptGroup_SubGroup_8G_2S (tNVIC_tPeripheral PeripheralId,u
 void NVIC_voidSetInterruptGroup_SubGroup_4G_4S (tNVIC_tPeripheral PeripheralId,u8 Copy_u8Group,u8 Copy_u8Sub) ;
 void NVIC_voidSetInterruptGroup_SubGroup_2G_8S (tNVIC_tPeripheral PeripheralId,u8 Copy_u8Group,u8 Copy_u8Sub) ; 
 void NVIC_voidSetInterruptGroup_SubGroup_0G_16S(tNVIC_tPeripheral PeripheralId,u8 Copy_u8Group,u8 Copy_u8Sub) ; 
+
 #endif // __NVIC_INTERFACE_H__
