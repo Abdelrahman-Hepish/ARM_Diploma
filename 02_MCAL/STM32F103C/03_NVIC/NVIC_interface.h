@@ -42,7 +42,7 @@ typedef enum
   NVIC_TIM3            = 29   ,  
   NVIC_TIM4            = 30   ,  
   NVIC_I2C1_EV         = 31   ,  
-  NVIC_I2C1_ER         = 32   ,  
+  NVIC_I2C1_ER         = 32   ,
   NVIC_I2C2_EV         = 33   ,  
   NVIC_I2C2_ER         = 34   ,  
   NVIC_SPI1            = 35   ,  

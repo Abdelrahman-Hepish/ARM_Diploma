@@ -5,11 +5,12 @@
 /* Version       : V01                                                   */
 /* GitHub        : https://github.com/Abdelrahman-Hepish                 */
 /*************************************************************************/
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
-#include "NVIC_interface.h"
-#include "NVIC_private.h"
-#include "NVIC_config.h"
+#include "..\..\..\01_LIB\01_STD_TYPES\STD_TYPES.h"
+#include "..\..\..\01_LIB\02_BIT_MATH\BIT_MATH.h"
+#include "..\..\..\02_MCAL\STM32F103C\03_NVIC\NVIC_interface.h"
+#include "..\..\..\02_MCAL\STM32F103C\03_NVIC\NVIC_config.h"
+#include "..\..\..\02_MCAL\STM32F103C\03_NVIC\NVIC_private.h"
+
 void NVIC_voidEnablePerInterrupt(tNVIC_tPeripheral Copy_u8PeripheralName) 
 {
 
@@ -58,12 +59,12 @@ void NVIC_voidClearPendingFlagPerInterrupt(tNVIC_tPeripheral Copy_u8PeripheralNa
 tNVIC_ActiveFlagStatus NVIC_u8GetActiveFlagStatus(tNVIC_tPeripheral Copy_u8PeripheralName) 
 {
 	tNVIC_ActiveFlagStatus ret = NVIC_ACTIVE_FLAG_DISABLED ; 
-     if(Copy_u8PeripheralName <= NVIC_TIM3 )
+     if(Copy_u8PeripheralName <= NVIC_I2C1_ER )
 	 {
 		ret =  GET_BIT(NVIC_IABR0,Copy_u8PeripheralName) ; 
 	 }else 
 	 {
-		Copy_u8PeripheralName -=  NVIC_TIM4 ;
+		Copy_u8PeripheralName -=  NVIC_I2C2_EV ;
 		ret =  GET_BIT(NVIC_IABR1,Copy_u8PeripheralName) ;  
 	 }
 	 return ret ; 
