@@ -9,7 +9,7 @@
 #define __EXTI_PRIVATE_H__
 
 #define EXTI_BASE_ADDRESS 0x40010400 
-typedef enum 
+typedef struct
 {
 	volatile u32 IMR ; 
     volatile u32 EMR ; 
@@ -18,7 +18,6 @@ typedef enum
     volatile u32 SWIER ; 
     volatile u32 PR ; 
 }tEXTI_REG ; 
-
-#define EXTI ((volatile tEXTI_REG *)  EXTI_BASE_ADDRESS ) 
+#define EXTI ((tEXTI_REG *)  EXTI_BASE_ADDRESS )
 		
 #endif  __EXTI_PRIVATE_H__

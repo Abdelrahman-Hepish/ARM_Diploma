@@ -9,14 +9,14 @@
 #define __AFIO_PRIVATE_H__
 
 #define AFIO_BASE_ADDRESS 0x40010000
-typedef enum 
+typedef struct
 {
  volatile u32  EVCR    ; 
  volatile u32  MAPR    ; 
  volatile u32  EXTICR[4] ; 
  volatile u32  MAPR2   ; 
 }tAFIO ; 
-#define AFIO ((volatile tAFIO *) AFIO_BASE_ADDRESS ) 
+#define AFIO ((tAFIO *) AFIO_BASE_ADDRESS )
               
 			 
 #endif  // __AFIO_PRIVATE_H__
