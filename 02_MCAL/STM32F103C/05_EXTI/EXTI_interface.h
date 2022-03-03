@@ -36,16 +36,12 @@ typedef enum
 	EXTI_LINE_12      , 
 	EXTI_LINE_13      , 
 	EXTI_LINE_14      ,
-	EXTI_LINE_15      , 
-	EXTI_LINE_16      , 
-	EXTI_LINE_17      , 
-	EXTI_LINE_18      , 
-	EXTI_LINE_19      
+	EXTI_LINE_15     
 }tEXTI_Line ; 
 
 void EXTI_voidInitLine(tEXTI_Line Copy_ExtiLine ,tEXTI_TriggerMode Copy_TriggerMode ,tEXTI_State Copy_ExtiState) ; 
 void EXTI_voidSetMode(tEXTI_Line Copy_ExtiLine ,tEXTI_TriggerMode Copy_TriggerMode) ; 
 void EXTI_voidSetState(tEXTI_Line Copy_ExtiLine ,tEXTI_State Copy_ExtiState) ; 
 void EXTI_voidSetSoftWareTrigger(tEXTI_Line Copy_ExtiLine ) ; 
-		
+void EXTI_voidSetLineCallBackFunc(tEXTI_Line Copy_ExtiLine , void (*ptrfunc) (void)) ; 		
 #endif  __EXTI_INTERFACE_H__

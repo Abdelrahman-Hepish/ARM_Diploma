@@ -11,6 +11,8 @@
 #include "EXTI_private.h"
 #include "EXTI_config.h"
 
+void (*CallBackFunctEXTI_LINE[16]) (void) ; 
+ 
 void EXTI_voidInitLine(tEXTI_Line Copy_ExtiLine ,tEXTI_TriggerMode Copy_TriggerMode ,tEXTI_State Copy_ExtiState)
 {
 	switch(Copy_TriggerMode) 
@@ -37,4 +39,47 @@ void EXTI_voidSetState(tEXTI_Line Copy_ExtiLine ,tEXTI_State Copy_ExtiState)
 void EXTI_voidSetSoftWareTrigger(tEXTI_Line Copy_ExtiLine )
 {
 	SET_BIT(EXTI->SWIER,Copy_ExtiLine) ;  
+}
+void EXTI_voidSetLineCallBackFunc(tEXTI_Line Copy_ExtiLine , void (*ptrfunc) (void)) 
+{
+	CallBackFunctEXTI_LINE[Copy_ExtiLine] = ptrfunc ; 
+}
+
+void EXTI0_IRQHandler(void)
+{
+	CallBackFunctEXTI_LINE_0() ; 
+	/* Clear Pending Flag */ 
+	SET_BIT(EXTI->PR,EXTI_LINE_0) ; 
+}
+void EXTI1_IRQHandler(void)
+{
+	CallBackFunctEXTI_LINE_1() ;
+	/* Clear Pending Flag */ 
+    SET_BIT(EXTI->PR,EXTI_LINE_1) ;	
+}
+void EXTI2_IRQHandler(void)
+{
+	CallBackFunctEXTI_LINE_2() ; 
+	/* Clear Pending Flag */ 
+	SET_BIT(EXTI->PR,EXTI_LINE_2) ;	
+}
+void EXTI3_IRQHandler(void)
+{
+	CallBackFunctEXTI_LINE_3() ; 
+	/* Clear Pending Flag */ 
+	SET_BIT(EXTI->PR,EXTI_LINE_3) ;	
+}
+void EXTI4_IRQHandler(void)
+{
+	CallBackFunctEXTI_LINE_4() ;
+	/* Clear Pending Flag */ 
+    SET_BIT(EXTI->PR,EXTI_LINE_4) ;		
+}
+EXTI9_5_IRQHandler(void)
+{
+	
+}
+EXTI15_10_IRQHandler(void)
+{
+	
 }
