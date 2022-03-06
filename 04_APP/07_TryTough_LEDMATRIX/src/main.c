@@ -18,10 +18,17 @@ void main(void)
 	RCC_voidSetPeripheralClkState(RCC_APB2_IOPA,RCC_PERIPHERAL_ENABLE) ;
 	RCC_voidSetPeripheralClkState(RCC_APB2_IOPB,RCC_PERIPHERAL_ENABLE) ;
     LEDMRX_voidInit() ;
-    u8 A[8] = {0, 0, 124, 18, 18, 124, 0, 0} ;
+    u8 A[8] = {0,0,0,0,0,0,0,0} ;
+    char *ptr = "ABCDE" ; u8 index = 0 ;
 	while(1)
 	{
+	for(int i = 0 ;i<=49;i++)
+	{
+	    LEDMRX_voidDisplayChar(ptr[index]) ;
+	}
     LEDMRX_voidDisplay(A) ;
+    index = (index + 1) % 5 ;
+    Delay_ms(1000) ;
 	}
 }
 

@@ -15,5 +15,5 @@ void AFIO_voidSetEXTI_Configuration(tAFIO_Line Copy_u8Line ,tAFIO_LinePort Copy_
 	u8 Copy_RegisterId = Copy_u8Line / 4 ;
 	u8 Copy_offset = Copy_u8Line % 4 ;
 	u8 Copy_shift  = Copy_offset * 4 ;
-	MAN_NIBBLE(AFIO->EXTICR[Copy_RegisterId],Copy_shift,Copy_u8Port) ;
+	MAN_NIBBLE(AFIO->EXTICR_[Copy_RegisterId],Copy_shift,Copy_u8Port) ;
 }

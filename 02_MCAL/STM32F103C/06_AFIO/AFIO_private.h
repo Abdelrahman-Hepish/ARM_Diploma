@@ -13,7 +13,7 @@ typedef struct
 {
  volatile u32  EVCR    ; 
  volatile u32  MAPR    ; 
- volatile u32  EXTICR[4] ; 
+ volatile u32  EXTICR_[4] ;
  volatile u32  MAPR2   ; 
 }tAFIO ; 
 #define AFIO ((tAFIO *) AFIO_BASE_ADDRESS )

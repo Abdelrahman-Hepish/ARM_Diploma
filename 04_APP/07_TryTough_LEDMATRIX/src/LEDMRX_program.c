@@ -14,6 +14,16 @@
 #include "..\..\..\03_HAL\02_LEDMRX\LEDMRX_config.h"
 static void LEDMRX_voidDisableAllCol(void) ;
 static void LEDMRX_voidSetRowData(u8) ;
+#define CHAR_A_OFFSET 65
+u8 Characters [26] [8] =
+{
+		{0, 0   , 124 , 18  , 18  , 124 , 0  , 0  } ,
+		{0, 255 , 42  , 42  , 62  , 0   , 0  , 0  } ,
+		{0, 126 , 66  , 66  , 66  , 66  , 0  , 0  } ,
+		{0, 255 , 66  , 66  , 66  , 126 , 0  , 0  } ,
+		{0, 127 , 73  , 73  , 73  , 73  , 73 , 0  }
+
+};
 void LEDMRX_voidInit(void)
 {
 	GPIO_voidInitPin(LEDMRX_ROW_0_PIN , PIN_NM_OUTPUT_2MHZ , GPIO_PIN_LOW ) ;
@@ -115,6 +125,11 @@ void LEDMRX_voidDisplay(u8 *Copy_u8Data)
     LEDMRX_voidSetRowData(Copy_u8Data[7]);
 	/* Delay 2ms */
 	Delay_ms(delaytime) ;
+}
+void LEDMRX_voidDisplayChar(u8 ch )
+{
+	u8 index = ch - CHAR_A_OFFSET ;
+	LEDMRX_voidDisplay(Characters[index]) ;
 }
 static void LEDMRX_voidDisableAllCol(void)
 {
