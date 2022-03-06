@@ -20,4 +20,4 @@ typedef struct
 }tEXTI_REG ; 
 #define EXTI ((tEXTI_REG *)  EXTI_BASE_ADDRESS )
 		
-#endif  __EXTI_PRIVATE_H__
+#endif // __EXTI_PRIVATE_H__
