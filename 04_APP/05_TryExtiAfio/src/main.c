@@ -19,7 +19,7 @@ void Exti_1_func(void) ;
  * Steps :
  * - Set RCC clocks for system
  * - Enable RCC for AFIO & GPIO used
- * - GPIO directions & states
+ * - GPIO directions & states -> GPIO for EXTI pins Set as input & Set Ideal State
  * - NVIC init EXTI used
  * - AFIO selects Port per line
  * - EXTI selects mode(Signal latch) per line
