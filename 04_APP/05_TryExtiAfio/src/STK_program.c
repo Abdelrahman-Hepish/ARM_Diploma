@@ -40,7 +40,7 @@ void STK_voidSetClkSrc(tSTK_ClockSource Copy_u8STK_ClkSrc)
 {
 	MAN_BIT(STK_CTRL,STK_CLKSOURCE_BIT,Copy_u8STK_ClkSrc) ;
 }
-void Delay_ms(u8 Copy_u8DelayTime) 
+void Delay_ms(u32 Copy_u8DelayTime)
 {
 	CurrentRunningMode = DELAY_MS_TIME ;
 	DelayTime = Copy_u8DelayTime ; 
