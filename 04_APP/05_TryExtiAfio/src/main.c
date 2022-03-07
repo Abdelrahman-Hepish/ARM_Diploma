@@ -12,6 +12,7 @@
 #include "..\..\..\02_MCAL\STM32F103C\04_SCB\SCB_interface.h"
 #include "..\..\..\02_MCAL\STM32F103C\05_EXTI\EXTI_interface.h"
 #include "..\..\..\02_MCAL\STM32F103C\06_AFIO\AFIO_interface.h"
+#include "..\..\..\02_MCAL\STM32F103C\07_STK\STK_interface.h"
 void Exti_0_func(void) ;
 void Exti_1_func(void) ;
 /*
@@ -36,66 +37,62 @@ void main(void)
 	RCC_voidSetPeripheralClkState(RCC_APB2_AFIO,RCC_PERIPHERAL_ENABLE) ;
 	/* Init Pins of PortB as input , PortA as Output */
 	GPIO_voidInitPin(GPIO_PORTB,GPIO_PIN_0,PIN_PU_INPUT,GPIO_PIN_HIGH) ;
-//	GPIO_voidInitPin(GPIO_PORTB,GPIO_PIN_1,PIN_PU_INPUT,GPIO_PIN_HIGH) ;
+	GPIO_voidInitPin(GPIO_PORTB,GPIO_PIN_1,PIN_PU_INPUT,GPIO_PIN_HIGH) ;
 	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_8,PIN_NM_OUTPUT_2MHZ,GPIO_PIN_LOW) ;
 	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_9,PIN_NM_OUTPUT_2MHZ,GPIO_PIN_LOW) ;
 	/* Set System Group , SubGroup Format */
 	SCB_SetInterruptGroupingSystem(SCB_4_GRP_4_SUB) ;
 	/* Enable EXTI_0 & EXTI_1 */
 	NVIC_voidEnablePerInterrupt(NVIC_EXTI0) ;
-//	NVIC_voidEnablePerInterrupt(NVIC_EXTI1) ;
+	NVIC_voidEnablePerInterrupt(NVIC_EXTI1) ;
 	/* Assign EXTI_0 to group 0 & sub 1
 	 * Assign EXTI_1 to group 1 & sub 0
 	 */
 	NVIC_voidSetInterruptGroup_SubGroup_4G_4S (NVIC_EXTI0,0,1) ;
-//	NVIC_voidSetInterruptGroup_SubGroup_4G_4S (NVIC_EXTI1,1,0) ;
+	NVIC_voidSetInterruptGroup_SubGroup_4G_4S (NVIC_EXTI1,1,0) ;
 	/*
 	 * Assign Line 0 to Port B
 	 * Assign Line 1 to Port B
 	 */
 	AFIO_voidSetEXTI_Configuration(AFIO_LINE_0 ,AFIO_LINE_PORT_B) ;
-//	AFIO_voidSetEXTI_Configuration(AFIO_LINE_1 ,AFIO_LINE_PORT_B) ;
+	AFIO_voidSetEXTI_Configuration(AFIO_LINE_1 ,AFIO_LINE_PORT_B) ;
 	/*
 	 *  Assign Call back function
 	 */
 	EXTI_voidSetLineCallBackFunc(EXTI_LINE_0 , Exti_0_func) ;
-//	EXTI_voidSetLineCallBackFunc(EXTI_LINE_0 , Exti_1_func) ;
+	EXTI_voidSetLineCallBackFunc(EXTI_LINE_1 , Exti_1_func) ;
 	/*
 	 *  Assign Triggering mode for Exti_0 , Exti_1 & Enable poth
 	 */
 	/* what is Bit ideal state ? */
 	EXTI_voidInitLine(EXTI_LINE_0 ,EXTI_FALING_TRIGGER,EXTI_ENABLE) ;
-//	EXTI_voidInitLine(EXTI_LINE_1 ,EXTI_ON_CHANGE_TRIGGER,EXTI_ENABLE) ;
+	EXTI_voidInitLine(EXTI_LINE_1 ,EXTI_FALING_TRIGGER,EXTI_ENABLE) ;
 
 	while(1)
 	{
 		GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_8,GPIO_PIN_LOW) ;
+		GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_9,GPIO_PIN_LOW) ;
 	}
 }
 void Exti_0_func(void)
 {
-	for(int i = 0 ;i<=9;i++)
+	GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_9,GPIO_PIN_LOW) ;
+	for(int i = 0 ;i<=25;i++)
 	{
 		GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_8,GPIO_PIN_HIGH) ;
-		for(int i = 0 ;i<=1000;i++)
-		{
-			for(int j = 0 ;j<=100;j++)
-			{
-				asm("NOP") ;
-			}
-		}
-		GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_9,GPIO_PIN_LOW) ;
-		for(int i = 0 ;i<=1000;i++)
-		{
-			for(int j = 0 ;j<=100;j++)
-			{
-				asm("NOP") ;
-			}
-		}
+		Delay_ms(200) ;
+		GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_8,GPIO_PIN_LOW) ;
+		Delay_ms(200) ;
 	}
 }
 void Exti_1_func(void)
 {
 	GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_8,GPIO_PIN_LOW) ;
-	GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_9,GPIO_PIN_HIGH) ;
+	for(int i = 0 ;i<=25;i++)
+	{
+		GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_9,GPIO_PIN_HIGH) ;
+		Delay_ms(200) ;
+		GPIO_voidSetPinState(GPIO_PORTA,GPIO_PIN_9,GPIO_PIN_LOW) ;
+		Delay_ms(200) ;
+	}
 }
