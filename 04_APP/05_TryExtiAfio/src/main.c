@@ -21,6 +21,7 @@ void main(void)
 	/* Enable RCC for GPIO A , B */
 	RCC_voidSetPeripheralClkState(RCC_APB2_IOPA,RCC_PERIPHERAL_ENABLE) ;
 	RCC_voidSetPeripheralClkState(RCC_APB2_IOPB,RCC_PERIPHERAL_ENABLE) ;
+	RCC_voidSetPeripheralClkState(RCC_APB2_AFIO,RCC_PERIPHERAL_ENABLE) ;
 	/* Init Pins of PortB as input , PortA as Output */
 	GPIO_voidInitPin(GPIO_PORTB,GPIO_PIN_0,PIN_PU_INPUT,GPIO_PIN_HIGH) ;
 	GPIO_voidInitPin(GPIO_PORTB,GPIO_PIN_1,PIN_PU_INPUT,GPIO_PIN_HIGH) ;
