@@ -17,11 +17,11 @@ static void LEDMRX_voidSetRowData(u8) ;
 #define CHAR_A_OFFSET 65
 u8 Characters [26] [8] =
 {
-		{0, 0   , 124 , 18  , 18  , 124 , 0  , 0  } ,
-		{0, 255 , 42  , 42  , 62  , 0   , 0  , 0  } ,
-		{0, 126 , 66  , 66  , 66  , 66  , 0  , 0  } ,
-		{0, 255 , 66  , 66  , 66  , 126 , 0  , 0  } ,
-		{0, 127 , 73  , 73  , 73  , 73  , 73 , 0  }
+		{0, 124 , 18  , 18  , 124 , 0   , 0  , 0  } ,
+		{0, 34  , 62  , 42  , 42  , 42  , 28 , 0  } ,
+		{0, 62  , 34  , 34  , 34  , 0   , 0  , 0  } ,
+		{0, 62  , 34  , 34  , 34  , 28  , 0  , 0  } ,
+		{0, 62  , 42  , 42  , 42  , 0   , 0  , 0  }
 
 };
 void LEDMRX_voidInit(void)
@@ -46,85 +46,94 @@ void LEDMRX_voidInit(void)
 void LEDMRX_voidDisplay(u8 *Copy_u8Data)
 {
 	u8 delaytime = 3	 ;
+	u32 Copy_u32NumberofTicks = 2500 ;
     /*        0           */
     /* disable all columns */
     LEDMRX_voidDisableAllCol() ;
-	/* Enalbe Column 0 */
-	GPIO_voidSetPinState(LEDMRX_COL_0_PIN , GPIO_PIN_LOW) ;
 	/* Set Row Data */
     LEDMRX_voidSetRowData(Copy_u8Data[0]);
+	/* Enalbe Column 0 */
+	GPIO_voidSetPinState(LEDMRX_COL_0_PIN , GPIO_PIN_LOW) ;
 	/* Delay 2ms */
-	Delay_ms(delaytime) ;
+    Delay_ms(delaytime) ;
+  // STK_BusyWaitTicks(Copy_u32NumberofTicks) ;
 
 	/*        1           */
     /* disable all columns */
     LEDMRX_voidDisableAllCol() ;
-	/* Enalbe Column 0 */
-	GPIO_voidSetPinState(LEDMRX_COL_1_PIN , GPIO_PIN_LOW) ;
 	/* Set Row Data */
     LEDMRX_voidSetRowData(Copy_u8Data[1]);
+	/* Enalbe Column 0 */
+	GPIO_voidSetPinState(LEDMRX_COL_1_PIN , GPIO_PIN_LOW) ;
 	/* Delay 2ms */
-	Delay_ms(delaytime) ;
+    Delay_ms(delaytime) ;
+  // STK_BusyWaitTicks(Copy_u32NumberofTicks) ;
 
 	/*        2           */
 	/* disable all columns */
     LEDMRX_voidDisableAllCol() ;
-	/* Enalbe Column 0 */
-	GPIO_voidSetPinState(LEDMRX_COL_2_PIN , GPIO_PIN_LOW) ;
 	/* Set Row Data */
     LEDMRX_voidSetRowData(Copy_u8Data[2]);
+	/* Enalbe Column 0 */
+	GPIO_voidSetPinState(LEDMRX_COL_2_PIN , GPIO_PIN_LOW) ;
 	/* Delay 2ms */
-	Delay_ms(delaytime) ;
+    Delay_ms(delaytime) ;
+  // STK_BusyWaitTicks(Copy_u32NumberofTicks) ;
 
 	/*        3           */
 	/* disable all columns */
     LEDMRX_voidDisableAllCol() ;
-	/* Enalbe Column 0 */
-	GPIO_voidSetPinState(LEDMRX_COL_3_PIN , GPIO_PIN_LOW) ;
 	/* Set Row Data */
     LEDMRX_voidSetRowData(Copy_u8Data[3]);
+	/* Enalbe Column 0 */
+	GPIO_voidSetPinState(LEDMRX_COL_3_PIN , GPIO_PIN_LOW) ;
 	/* Delay 2ms */
-	Delay_ms(delaytime) ;
+      Delay_ms(delaytime) ;
+    // STK_BusyWaitTicks(Copy_u32NumberofTicks) ;
 
 	/*        4           */
 	/* disable all columns */
     LEDMRX_voidDisableAllCol() ;
-	/* Enalbe Column 0 */
-	GPIO_voidSetPinState(LEDMRX_COL_4_PIN , GPIO_PIN_LOW) ;
 	/* Set Row Data */
     LEDMRX_voidSetRowData(Copy_u8Data[4]);
+	/* Enalbe Column 0 */
+	GPIO_voidSetPinState(LEDMRX_COL_4_PIN , GPIO_PIN_LOW) ;
 	/* Delay 2ms */
-	Delay_ms(delaytime) ;
+    Delay_ms(delaytime) ;
+  // STK_BusyWaitTicks(Copy_u32NumberofTicks) ;
 
 	/*        5           */
 	/* disable all columns */
     LEDMRX_voidDisableAllCol() ;
-	/* Enalbe Column 0 */
-	GPIO_voidSetPinState(LEDMRX_COL_5_PIN , GPIO_PIN_LOW) ;
 	/* Set Row Data */
     LEDMRX_voidSetRowData(Copy_u8Data[5]);
+	/* Enalbe Column 0 */
+	GPIO_voidSetPinState(LEDMRX_COL_5_PIN , GPIO_PIN_LOW) ;
 	/* Delay 2ms */
-	Delay_ms(delaytime) ;
+    Delay_ms(delaytime) ;
+  // STK_BusyWaitTicks(Copy_u32NumberofTicks) ;
 
 	/*        6           */
 	/* disable all columns */
     LEDMRX_voidDisableAllCol() ;
-	/* Enalbe Column 0 */
-	GPIO_voidSetPinState(LEDMRX_COL_6_PIN , GPIO_PIN_LOW) ;
 	/* Set Row Data */
     LEDMRX_voidSetRowData(Copy_u8Data[6]);
+	/* Enalbe Column 0 */
+	GPIO_voidSetPinState(LEDMRX_COL_6_PIN , GPIO_PIN_LOW) ;
 	/* Delay 2ms */
-	Delay_ms(delaytime) ;
+    Delay_ms(delaytime) ;
+  // STK_BusyWaitTicks(Copy_u32NumberofTicks) ;
 
 	/*        7           */
 	/* disable all columns */
     LEDMRX_voidDisableAllCol() ;
-	/* Enalbe Column 0 */
-	GPIO_voidSetPinState(LEDMRX_COL_7_PIN , GPIO_PIN_LOW) ;
 	/* Set Row Data */
     LEDMRX_voidSetRowData(Copy_u8Data[7]);
+	/* Enalbe Column 0 */
+	GPIO_voidSetPinState(LEDMRX_COL_7_PIN , GPIO_PIN_LOW) ;
 	/* Delay 2ms */
-	Delay_ms(delaytime) ;
+    Delay_ms(delaytime) ;
+  // STK_BusyWaitTicks(Copy_u32NumberofTicks) ;
 }
 void LEDMRX_voidDisplayChar(u8 ch )
 {

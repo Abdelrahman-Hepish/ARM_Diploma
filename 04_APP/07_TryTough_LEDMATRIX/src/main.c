@@ -22,7 +22,7 @@ void main(void)
     char *ptr = "ABCDE" ; u8 index = 0 ;
 	while(1)
 	{
-	for(int i = 0 ;i<=49;i++)
+	for(int i = 0 ;i<=99;i++)
 	{
 	    LEDMRX_voidDisplayChar(ptr[index]) ;
 	}
