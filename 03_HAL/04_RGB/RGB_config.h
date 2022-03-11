@@ -20,7 +20,7 @@
 #define RGB_R_LED_PORT GPIO_PORTA
 #define RGB_G_LED_PORT GPIO_PORTA
 #define RGB_B_LED_PORT GPIO_PORTA 	
-#define RGB_R_LED_PIN  GPIO_PIN_1
-#define RGB_G_LED_PIN  GPIO_PIN_2
-#define RGB_B_LED_PIN  GPIO_PIN_3	  
+#define RGB_R_LED_PIN  GPIO_PIN_8
+#define RGB_G_LED_PIN  GPIO_PIN_9
+#define RGB_B_LED_PIN  GPIO_PIN_10	  
 #endif // __RGB_CONFIG_H__

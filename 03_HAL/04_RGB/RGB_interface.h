@@ -13,9 +13,9 @@ typedef enum
 	GREEN ,
 	BLUE ,
 	YELLOW ,
-	Magenta ,
-	Cyan ,
-	BLACK ,
+	MAGENTA ,
+	CYAN ,
+	WHITE ,
 	OFF
 }tRGB_Colour;
 void RGB_voidInit(tRGB_Colour Copy_u8Colour) ; 

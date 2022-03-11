@@ -52,15 +52,15 @@ void main(void)
 		}
 		else if (irData == IR_5_BUTTON)
 		{
-			RGB_SetMode(Magenta) ;
+			RGB_SetMode(MAGENTA) ;
 		}
 		else if (irData == IR_6_BUTTON)
 		{
-			RGB_SetMode(Cyan) ;
+			RGB_SetMode(CYAN) ;
 		}
 		else if (irData == IR_7_BUTTON)
 		{
-			RGB_SetMode(BLACK) ;
+			RGB_SetMode(WHITE) ;
 		}
 	}
 }

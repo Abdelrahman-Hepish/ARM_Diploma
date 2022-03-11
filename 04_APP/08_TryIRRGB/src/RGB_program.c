@@ -48,17 +48,17 @@ void RGB_SetMode(tRGB_Colour Copy_u8Colour)
         GPIO_voidSetPinState(RGB_G_LED_PORT,RGB_G_LED_PIN,GPIO_PIN_HIGH)   ; 
         GPIO_voidSetPinState(RGB_B_LED_PORT,RGB_B_LED_PIN,GPIO_PIN_LOW)  ; 	
         break ;		
-    case Magenta : 
+    case MAGENTA :
 		GPIO_voidSetPinState(RGB_R_LED_PORT,RGB_R_LED_PIN,GPIO_PIN_HIGH)   ; 
         GPIO_voidSetPinState(RGB_G_LED_PORT,RGB_G_LED_PIN,GPIO_PIN_LOW)   ; 
         GPIO_voidSetPinState(RGB_B_LED_PORT,RGB_B_LED_PIN,GPIO_PIN_HIGH)  ; 	
         break ;		
-    case Cyan :
+    case CYAN :
 		GPIO_voidSetPinState(RGB_R_LED_PORT,RGB_R_LED_PIN,GPIO_PIN_LOW)   ; 
         GPIO_voidSetPinState(RGB_G_LED_PORT,RGB_G_LED_PIN,GPIO_PIN_HIGH)   ; 
         GPIO_voidSetPinState(RGB_B_LED_PORT,RGB_B_LED_PIN,GPIO_PIN_HIGH)  ; 	
         break ;		
-    case BLACK : 
+    case WHITE :
 		GPIO_voidSetPinState(RGB_R_LED_PORT,RGB_R_LED_PIN,GPIO_PIN_HIGH)   ; 
         GPIO_voidSetPinState(RGB_G_LED_PORT,RGB_G_LED_PIN,GPIO_PIN_HIGH)   ; 
         GPIO_voidSetPinState(RGB_B_LED_PORT,RGB_B_LED_PIN,GPIO_PIN_HIGH)  ; 	
