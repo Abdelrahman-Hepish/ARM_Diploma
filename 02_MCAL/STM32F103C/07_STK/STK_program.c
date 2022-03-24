@@ -27,6 +27,8 @@ void STK_voidInit(tSTK_State Copy_u8STK_State,tSTK_ClockSource Copy_u8STK_ClkSrc
      MAN_BIT(STK_CTRL,STK_ENABLE_BIT,Copy_u8STK_State) ;
 	 MAN_BIT(STK_CTRL,STK_TICKINT_BIT,Copy_u8STK_IntState) ;   
 	 MAN_BIT(STK_CTRL,STK_CLKSOURCE_BIT,Copy_u8STK_ClkSrc) ;
+		STK_VAL  = 0 ;
+		STK_LOAD = 0 ;
 }	
 void STK_voidSetState(tSTK_State Copy_u8STK_State ) 
 {
@@ -66,24 +68,27 @@ void STK_BusyWaitTicks(u32 Copy_u32NumberofTicks)
 }
 void STK_voidSetIntervalSingle(u32 Copy_u32NumberofTicks,void (*ptrfunc)(void))
 {
+
+	/* Clear Current SysTick if running */
+	STK_VAL  = 0 ;
+	MAN_BIT(STK_CTRL,STK_ENABLE_BIT,STK_DISABLED) ;
+
 	STK_LOAD = Copy_u32NumberofTicks ;
 
 	/* Make sure Timer & interrupt are working */
 	MAN_BIT(STK_CTRL,STK_ENABLE_BIT,STK_ENABLED) ;
 	MAN_BIT(STK_CTRL,STK_TICKINT_BIT,STK_INT_ENABLE) ;
-
 	CurrentRunningMode = SET_INTERVAL_SINGLE ;
-
 	MSTK_CallBack = ptrfunc ;
-
-
+	MAN_BIT(STK_CTRL,STK_TICKINT_BIT,STK_INT_ENABLE) ;
 }
 void STK_voidSetIntervalPeriodic(u32 Copy_u32NumberofTicks,void (*ptrfunc)(void))
 {
 	MSTK_CallBack = ptrfunc ;
 	CurrentRunningMode = SET_INTERVAL_PERIODIC ;
+	STK_LOAD = Copy_u32NumberofTicks ;
 }
-u32  STK_u32GetEpapsedTicks(void)
+u32  STK_u32GetElapsedTicks(void)
 {
 	return STK_LOAD - STK_VAL ;
 }
