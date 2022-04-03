@@ -170,12 +170,131 @@
 #define CHANNEL_7_STATE           CHANNEL_DISABLED
 /* --------------------------------------------------------- */
 
+DMA_ChannelConfig CHANNELS[7] ; 
+/* --------------- Channel 0 configuration ----------------- */ 
+CHANNEL[0].channelId       =  0 ; 
+CHANNEL[0].channelState    =  CHANNEL_DISABLED ; 
+CHANNEL[0].m2mState        =  MEM2MEM_ENABLED ; 
+CHANNEL[0].plState         =  PRIORITY_LEVEL_MEDIUM ; 
+CHANNEL[0].mwidthSize      =  WIDTH_MSIZE_32BIT ; 
+CHANNEL[0].pwidthSize      =  WIDTH_PSIZE_32BIT ; 
+CHANNEL[0].memIncMode      =  MINC_ENABLED ; 
+CHANNEL[0].perIncMode      =  PINC_ENABLED ; 
+CHANNEL[0].circMode        =  CIRC_DISABLED ; 
+CHANNEL[0].dataTxDir       =  DATA_TX_FROM_MEMORY ; 
+CHANNEL[0].transErrInt     =  TE_INTERRUPT_DISABLED ; 
+CHANNEL[0].htransErrInt    =  HT_INTERRUPT_DISABLED ; 
+CHANNEL[0].transCompInt    =  TC_INTERRUPT_DISABLED ; 
+/* --------------------------------------------------------- */
 
+/* --------------- Channel 1 configuration ----------------- */ 
+CHANNEL[1].channelId       =  1 ; 
+CHANNEL[1].channelState    =  CHANNEL_DISABLED ; 
+CHANNEL[1].m2mState        =  MEM2MEM_ENABLED ; 
+CHANNEL[1].plState         =  PRIORITY_LEVEL_MEDIUM ; 
+CHANNEL[1].mwidthSize      =  WIDTH_MSIZE_32BIT ; 
+CHANNEL[1].pwidthSize      =  WIDTH_PSIZE_32BIT ; 
+CHANNEL[1].memIncMode      =  MINC_ENABLED ; 
+CHANNEL[1].perIncMode      =  PINC_ENABLED ; 
+CHANNEL[1].circMode        =  CIRC_DISABLED ; 
+CHANNEL[1].dataTxDir       =  DATA_TX_FROM_MEMORY ; 
+CHANNEL[1].transErrInt     =  TE_INTERRUPT_DISABLED ; 
+CHANNEL[1].htransErrInt    =  HT_INTERRUPT_DISABLED ; 
+CHANNEL[1].transCompInt    =  TC_INTERRUPT_DISABLED ;
+/* --------------------------------------------------------- */
 
+/* --------------- Channel 2 configuration ----------------- */ 
+CHANNEL[2].channelId       =  2 ; 
+CHANNEL[2].channelState    =  CHANNEL_DISABLED ; 
+CHANNEL[2].m2mState        =  MEM2MEM_ENABLED ; 
+CHANNEL[2].plState         =  PRIORITY_LEVEL_MEDIUM ; 
+CHANNEL[2].mwidthSize      =  WIDTH_MSIZE_32BIT ; 
+CHANNEL[2].pwidthSize      =  WIDTH_PSIZE_32BIT ; 
+CHANNEL[2].memIncMode      =  MINC_ENABLED ; 
+CHANNEL[2].perIncMode      =  PINC_ENABLED ; 
+CHANNEL[2].circMode        =  CIRC_DISABLED ; 
+CHANNEL[2].dataTxDir       =  DATA_TX_FROM_MEMORY ; 
+CHANNEL[2].transErrInt     =  TE_INTERRUPT_DISABLED ; 
+CHANNEL[2].htransErrInt    =  HT_INTERRUPT_DISABLED ; 
+CHANNEL[2].transCompInt    =  TC_INTERRUPT_DISABLED ; 
+/* --------------------------------------------------------- */
 
+/* --------------- Channel 3 configuration ----------------- */ 
+CHANNEL[3].channelId       =  3 ; 
+CHANNEL[3].channelState    =  CHANNEL_DISABLED ; 
+CHANNEL[3].m2mState        =  MEM2MEM_ENABLED ; 
+CHANNEL[3].plState         =  PRIORITY_LEVEL_MEDIUM ; 
+CHANNEL[3].mwidthSize      =  WIDTH_MSIZE_32BIT ; 
+CHANNEL[3].pwidthSize      =  WIDTH_PSIZE_32BIT ; 
+CHANNEL[3].memIncMode      =  MINC_ENABLED ; 
+CHANNEL[3].perIncMode      =  PINC_ENABLED ; 
+CHANNEL[3].circMode        =  CIRC_DISABLED ; 
+CHANNEL[3].dataTxDir       =  DATA_TX_FROM_MEMORY ; 
+CHANNEL[3].transErrInt     =  TE_INTERRUPT_DISABLED ; 
+CHANNEL[3].htransErrInt    =  HT_INTERRUPT_DISABLED ; 
+CHANNEL[3].transCompInt    =  TC_INTERRUPT_DISABLED ;
+/* --------------------------------------------------------- */
 
+/* --------------- Channel 4 configuration ----------------- */ 
+CHANNEL[4].channelId       =  4 ; 
+CHANNEL[4].channelState    =  CHANNEL_DISABLED ; 
+CHANNEL[4].m2mState        =  MEM2MEM_ENABLED ; 
+CHANNEL[4].plState         =  PRIORITY_LEVEL_MEDIUM ; 
+CHANNEL[4].mwidthSize      =  WIDTH_MSIZE_32BIT ; 
+CHANNEL[4].pwidthSize      =  WIDTH_PSIZE_32BIT ; 
+CHANNEL[4].memIncMode      =  MINC_ENABLED ; 
+CHANNEL[4].perIncMode      =  PINC_ENABLED ; 
+CHANNEL[4].circMode        =  CIRC_DISABLED ; 
+CHANNEL[4].dataTxDir       =  DATA_TX_FROM_MEMORY ; 
+CHANNEL[4].transErrInt     =  TE_INTERRUPT_DISABLED ; 
+CHANNEL[4].htransErrInt    =  HT_INTERRUPT_DISABLED ; 
+CHANNEL[4].transCompInt    =  TC_INTERRUPT_DISABLED ; 
+/* --------------------------------------------------------- */
 
+/* --------------- Channel 5 configuration ----------------- */ 
+CHANNEL[5].channelId       =  5 ; 
+CHANNEL[5].channelState    =  CHANNEL_DISABLED ; 
+CHANNEL[5].m2mState        =  MEM2MEM_ENABLED ; 
+CHANNEL[5].plState         =  PRIORITY_LEVEL_MEDIUM ; 
+CHANNEL[5].mwidthSize      =  WIDTH_MSIZE_32BIT ; 
+CHANNEL[5].pwidthSize      =  WIDTH_PSIZE_32BIT ; 
+CHANNEL[5].memIncMode      =  MINC_ENABLED ; 
+CHANNEL[5].perIncMode      =  PINC_ENABLED ; 
+CHANNEL[5].circMode        =  CIRC_DISABLED ; 
+CHANNEL[5].dataTxDir       =  DATA_TX_FROM_MEMORY ; 
+CHANNEL[5].transErrInt     =  TE_INTERRUPT_DISABLED ; 
+CHANNEL[5].htransErrInt    =  HT_INTERRUPT_DISABLED ; 
+CHANNEL[5].transCompInt    =  TC_INTERRUPT_DISABLED ;
+/* --------------------------------------------------------- */
 
+/* --------------- Channel 6 configuration ----------------- */ 
+CHANNEL[6].channelId       =  6 ; 
+CHANNEL[6].channelState    =  CHANNEL_DISABLED ; 
+CHANNEL[6].m2mState        =  MEM2MEM_ENABLED ; 
+CHANNEL[6].plState         =  PRIORITY_LEVEL_MEDIUM ; 
+CHANNEL[6].mwidthSize      =  WIDTH_MSIZE_32BIT ; 
+CHANNEL[6].pwidthSize      =  WIDTH_PSIZE_32BIT ; 
+CHANNEL[6].memIncMode      =  MINC_ENABLED ; 
+CHANNEL[6].perIncMode      =  PINC_ENABLED ; 
+CHANNEL[6].circMode        =  CIRC_DISABLED ; 
+CHANNEL[6].dataTxDir       =  DATA_TX_FROM_MEMORY ; 
+CHANNEL[6].transErrInt     =  TE_INTERRUPT_DISABLED ; 
+CHANNEL[6].htransErrInt    =  HT_INTERRUPT_DISABLED ; 
+CHANNEL[6].transCompInt    =  TC_INTERRUPT_DISABLED ; 
+/* --------------------------------------------------------- */
 
-
+                                                      
+                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
 #endif  // __DMA_CONFIG_H__

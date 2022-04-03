@@ -84,6 +84,7 @@ typedef enum
 }Ch_DMA_State ; 
 typedef struct 
 {
+    unsigned u8            channelId      : 3 ; 
     unsigned Ch_DMA_State  channelState   : 1 ; 
     unsigned CH_DMA_M2M_S  m2mState       : 1 ; 
     unsigned CH_DMA_PL     plState        : 2 ; 

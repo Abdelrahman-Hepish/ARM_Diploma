@@ -10,3 +10,11 @@
 #include "SCHEDULER_interface.h"
 #include "SCHEDULER_private.h"
 #include "SCHEDULER_config.h"
+#include "STK_interface.h"
+#define _1_ms_TICKS    1000000
+typedef 
+void (*ptrfucAlgorithm) (void) = ((void*) 0) ; 
+void SCHEDULER_voidInit(void) 
+{
+	STK_voidInit(STK_ENABLED,STK_CLKSRC_AHB_BY_8,STK_INT_ENABLE) ; 
+	STK_voidSetIntervalPeriodic(_1_ms_TICKS,) ;

@@ -7,5 +7,6 @@
 /*************************************************************************/
 #ifndef __SCHEDULER_INTERFACE_H__
 #define __SCHEDULER_INTERFACE_H__
-			
+void 	SCHEDULER_voidInit(void) ;
+void    SCHEDULER_voidCreateTask(u8 Copy_u8TaskPriority,u8 Copy_u8TaskPriodicity,void (*Task_Callback)(void)) ;  		
 #endif  //__SCHEDULER_INTERFACE_H__
