@@ -8,6 +8,7 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 #include "GPIO_interface.h"
+/* Violate Rules ? */ 
 #include "SPI_interface.h"
 #include "SPI_private.h"
 #include "SPI_config.h"
