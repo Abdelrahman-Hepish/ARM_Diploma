@@ -21,6 +21,6 @@ typedef struct
    volatile  u32 I2SPR   ; 
 }SPI_Register;
 
-#define SPI ((volatile SPI_Register *) 0xx40013000)
+#define SPI ((volatile SPI_Register *) 0x40013000)
 		
 #endif //  __SPI_PRIVATE_H__
