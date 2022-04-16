@@ -11,6 +11,7 @@
 #include "SPI_interface.h"
 #include "SPI_private.h"
 #include "SPI_config.h"
+void (*SPI1_CallBackFunc)(u8) ; 
 void SPI_voidInit(void) 
 {
    MAN_BIT(SPI->CR1,15,BIDIMODE)                      ; 
@@ -66,4 +67,22 @@ void SPI_voidSendReceiveSynch(u8 Copy_u8DataToSend,u8 * Copy_u8PtrToRec)
     * Copy_u8PtrToRec = SPI1 -> DR ; 
     /* Unslect slave */ 
     GPIO_voidSetPinState(SPI1_SLAVE_SELCET_PIN,GPIO_PIN_HIGH) ;  
+}  
+void SPI_voidSendReceiveAsynch(u8 Copy_u8DataToSend,void (*ptrCallBackFunc)(u8)) 
+{
+		/* Set Call Back function */ 
+	SPI1_CallBackFunc = ptrCallBackFunc ; 
+	    /* Select Slave */ 
+    GPIO_voidSetPinState(SPI1_SLAVE_SELCET_PIN,GPIO_PIN_LOW) ;
+	    /* Wait so that doesn't over write another message */ 
+    while(GET_BIT(SPI1 -> SR , 7) == 1 ) ;
+	    /* Send data */ 
+    SPI1 -> DR = Copy_u8DataToSend ;
+}
+void SPI1_IRQHandler(void)
+{
+	    /* Unslect slave */ 
+    GPIO_voidSetPinState(SPI1_SLAVE_SELCET_PIN,GPIO_PIN_HIGH) ;
+		/* Send RX data to Call Back function */ 
+	SPI1_CallBackFunc(SPI1 -> DR ) ; 
 }
