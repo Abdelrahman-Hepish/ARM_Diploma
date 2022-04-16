@@ -96,4 +96,5 @@ void SPI_voidSetBaudRate(SPI_BaudRate Copy_u8SPIbaudRate) ;
 void SPI_voidSetClkPolarity(SPI_CPOL Copy_u8ClkPol) ; 
 void SPI_voidSetClkPhase(SPI_CPHA Copy_u8ClkPhase) ;
 void SPI_voidSendReceiveSynch(u8 Copy_u8DataToSend,u8 * Copy_u8PtrToRec) ; 
+void SPI_voidSendReceiveAsynch(u8 Copy_u8DataToSend,void (*ptrCallBackFunc)(u8)) ; 
 #endif // __SPI_INTERFACE_H__
