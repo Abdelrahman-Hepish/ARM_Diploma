@@ -52,12 +52,12 @@ typedef enum
 {
     USART_RX_DISABLED , 
     USART_RX_ENABLED 
-}UART_TX_State_t ;
+}UART_RX_State_t ;
 typedef enum 
 {
     USART_1BIT_STOP = 0 , 
     USART_2BIT_STOP = 2 , 
-}
+}UART_StopBitMOde_t ; 
 /* CPOL: Clock polarity */ 
 typedef enum 
 {
@@ -71,6 +71,6 @@ typedef enum
     WRITE_THEN_READ 
 }USART_CPHA_1 ;
 void USART1_init(void) ;
-void USART1_Transmit(u8 *Copy_u8PtrToTx) ; 
+void USART1_Transmit(u8 Copy_u8PtrToTx[]) ;
 u8   USART1_Receive(void) ; 
 #endif  //__USART_INTERFACE_H__
