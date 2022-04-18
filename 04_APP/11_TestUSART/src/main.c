@@ -16,16 +16,16 @@ void main(void)
 	RCC_voidInitSystemClk(RCC_PLL_OFF_HSI_OFF_HSE_ON_BYPASS_OFF, RCC_SYSTCLK_HSE ,RCC_PLL_NOT_USED,PLL_IN_X_1) ;
 	/* Enable RCC for GPIO A , B */
 	RCC_voidSetPeripheralClkState(RCC_APB2_USART1,RCC_PERIPHERAL_ENABLE) ;
+	USART1_init() ;
 	RCC_voidSetPeripheralClkState(RCC_APB2_IOPA,RCC_PERIPHERAL_ENABLE) ;
 	RCC_voidSetPeripheralClkState(RCC_APB2_IOPB,RCC_PERIPHERAL_ENABLE) ;
 	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_9,PIN_NM_OUTPUT_50MHZ,GPIO_PIN_LOW) ;
 	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_10,PIN_FL_INPUT,GPIO_PIN_LOW) ;
 	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_8,PIN_NM_OUTPUT_50MHZ,GPIO_PIN_LOW) ;
-	USART1_init() ;
 	u8 Ch = "Hello" , x  ;
 	while(1)
 	{
-		USART1_Transmit("Hello\n") ;
+		USART1_Transmit(Ch) ;
 		x = USART1_Receive() ;
 		if(x == 'O')
 		{

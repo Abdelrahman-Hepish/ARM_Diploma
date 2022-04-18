@@ -22,8 +22,8 @@ void USART1_init(void)
    MAN_BIT(USART1->CR1,6 ,USART1_TX_COM_INTER_STATE)                      ;
    MAN_BIT(USART1->CR1,3,USART1_TX_STATE)                      ;
    MAN_BIT(USART1->CR1,2,USART1_RX_STATE)                      ;
-   MAN_BIT(USART1->CR2,12,GET_BIT(USART1_N_STOP_BIT,1) )         ;
-   MAN_BIT(USART1->CR2,13,GET_BIT(USART1_N_STOP_BIT,2) )         ;
+   MAN_BIT(USART1->CR2,12,GET_BIT(USART1_N_STOP_BIT,0) )         ;
+   MAN_BIT(USART1->CR2,13,GET_BIT(USART1_N_STOP_BIT,1) )         ;
    MAN_BIT(USART1->CR2,10,USART1_CLK_POLARITY)                      ;
    MAN_BIT(USART1->CR2,9,USART1_CLK_PHASE)                        ;
    MAN_BIT(USART1->CR1,13,USART1_STATE)                      ;
