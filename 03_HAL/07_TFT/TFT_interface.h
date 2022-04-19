@@ -7,5 +7,6 @@
 /*************************************************************************/
 #ifndef __TFT_INTERFACE_H__
 #define __TFT_INTERFACE_H__
-
+void TFT_voidInit(void) ; 
+void TFT_voidDisplayImage(const u16 *Copy_u16PtrToImage) ; 
 #endif  // __TFT_INTERFACE_H__
