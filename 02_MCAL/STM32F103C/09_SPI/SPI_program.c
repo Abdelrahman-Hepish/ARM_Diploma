@@ -22,6 +22,7 @@ void SPI_voidInit(void)
    MAN_BIT(SPI->CR1,11,DATA_FORMAT)                   ;
    MAN_BIT(SPI->CR1,10,RXONLY)                        ;
    MAN_BIT(SPI->CR1,9,SSM_STATE)                      ;
+   MAN_BIT(SPI->CR1,8,SSI_STATE)                      ;
    MAN_BIT(SPI->CR1,7,BIT_ORDER)                      ;
    MAN_BIT(SPI->CR1,6,SPI_STATE)                      ;
    MAN_BIT(SPI->CR1,5,GET_BIT(SPI_BDRATE,2) )         ;

@@ -51,9 +51,9 @@ typedef enum
 /* SSI: Internal slave select */ 
 typedef enum 
 {
-    SLAVE_MG_BY_HW = 0 , 
-    SLAVE_MG_BY_SW 
-}SPI_SSM ; 
+    SLAVE_SELECTED = 0 , 
+	SLAVE_NOT_SELECTED
+}SPI_SSI ; 
 /* LSBFIRST: Frame format */ 
 typedef enum 
 {
