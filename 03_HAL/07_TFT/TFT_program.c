@@ -7,9 +7,9 @@
 /*************************************************************************/
 #include "..\..\..\01_LIB\01_STD_TYPES\STD_TYPES.h"
 #include "..\..\..\01_LIB\02_BIT_MATH\BIT_MATH.h"
+#include "..\..\..\02_MCAL\STM32F103C\07_STK\STK_interface.h"
 #include "..\..\..\02_MCAL\STM32F103C\02_GPIO\GPIO_interface.h"
 #include "..\..\..\02_MCAL\STM32F103C\09_SPI\SPI_interface.h"
-#include "..\..\..\02_MCAL\STM32F103C\07_STK\STK_program.c"
 #include "..\..\..\03_HAL\07_TFT\TFT_interface.h"
 #include "..\..\..\03_HAL\07_TFT\TFT_private.h"
 #include "..\..\..\03_HAL\07_TFT\TFT_config.h"
