@@ -44,6 +44,6 @@
 #define SPI_STATE    SPI_ENABLED 
 #define SPI_BDRATE   BAUD_RATE_BY_2
 #define NODE_RANK    SPI_MASTER_NODE 
-#define CLK_POL      CK_TO_0_WHEN_IDLE 
+#define CLK_POL      CK_TO_1_WHEN_IDLE
 #define CLK_PHASE    WRITE_THEN_READ 
 #endif // __SPI_CONFIG_H__
