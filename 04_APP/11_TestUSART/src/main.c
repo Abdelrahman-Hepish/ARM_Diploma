@@ -19,13 +19,13 @@ void main(void)
 	USART1_init() ;
 	RCC_voidSetPeripheralClkState(RCC_APB2_IOPA,RCC_PERIPHERAL_ENABLE) ;
 	RCC_voidSetPeripheralClkState(RCC_APB2_IOPB,RCC_PERIPHERAL_ENABLE) ;
-	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_9,PINT_AF_NM_OUTPUT_50MHZ,GPIO_PIN_LOW) ;
+	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_9,PINT_AF_NM_OUTPUT_2MHZ,GPIO_PIN_LOW) ;
 	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_10,PIN_FL_INPUT,GPIO_PIN_LOW) ;
-	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_8,PIN_NM_OUTPUT_50MHZ,GPIO_PIN_LOW) ;
+	GPIO_voidInitPin(GPIO_PORTA,GPIO_PIN_8,PIN_NM_OUTPUT_2MHZ,GPIO_PIN_LOW) ;
 	u8 Ch = "Hello" , x  ;
 	while(1)
 	{
-		USART1_Transmit(Ch) ;
+		USART1_Transmit("\nHello\t \n") ;
 		x = USART1_Receive() ;
 		if(x == 'O')
 		{
