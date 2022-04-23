@@ -16,5 +16,8 @@
 #define SLEEP_OUT_CMD         0X11 
 #define COLOUR_MODE_CMD       0X3A 
 #define DISPLAY_ON_CMD        0X29 
+#define SET_X_ADDRESS_CMD     0X2A
+#define SET_Y_ADDRESS_CMD     0X2B
+#define RAM_WRITE_CMD         0X2C
 
 #endif //  __TFT_PRIVATE_H__

@@ -30,4 +30,7 @@
 #define TFT_A0_PIN         GPIO_PORTA,GPIO_PIN_2
 #define TFT_RST_PIN        GPIO_PORTA,GPIO_PIN_1
 
+#define TFT_MAX_X_SIZE     0X007F
+#define TFT_MAX_Y_SIZE     0X009F
+#define TFT_NUM_PIXELS     20480
 #endif  __TFT_CONFIG_H__
